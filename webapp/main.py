@@ -1,11 +1,12 @@
-from flask import render_template, Flask
+from flask import Flask
+from helpers import template
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html', names=['Chelse', 'Elaine', 'Jared', 'Tyler', 'Valeria'])
+    return template('home', names=['Chelse', 'Elaine', 'Jared', 'Tyler', 'Valeria'])
 
 if __name__ == '__main__':
     # Bind to PORT if defined, otherwise default to 5000.

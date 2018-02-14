@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset='utf-8' />
+
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+
+    {% block css %}
+    <!-- Stylesheets -->
+    <link rel='stylesheet' href="{{ csspath }}" />
+    {% endblock %}
+
+    {% endblock %}
+</head>
+
+<body>
+
+    {% block content %}
+    {% endblock %}
+</body>
+{% block js %}
+<script src="{{ jspath }}"></script>
+{% endblock %}
+</html>

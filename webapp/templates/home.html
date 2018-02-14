@@ -1,5 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}
+Baker Ripley Home Page
+{% endblock %}
+
+{% block content %}
 <p> 
-  {% for item in names %}
-    {{ item }} 
-  {% endfor %}
+    {% for item in names %}{{ item }} {% endfor %}
 </p>
+{% endblock %}
