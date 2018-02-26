@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Baker Ripley Calendar of Events
+{% endblock %}
+
+{% block css %}
+	{{ super() }}
+	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.css') }} />
+	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/moment/moment.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.min.js') }}></script>
+ 
+{% endblock %}
+
+
+{% block content %}
+
+<div id='calendar'></div>
+
+
+{% endblock %}
