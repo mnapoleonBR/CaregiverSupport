@@ -7,3 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return template('home', names=['Chelse', 'Elaine', 'Jared', 'Tyler', 'Valeria'])
+
+@app.route('/test')
+def test():
+    return template('survey')
