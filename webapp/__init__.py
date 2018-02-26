@@ -16,3 +16,6 @@ def calendar():
 def nationalResources():
     return template('nationalresources')
 
+@app.route('/test')
+def test():
+    return template('survey')
