@@ -11,3 +11,4 @@ def home():
 @app.route('/test')
 def test():
     return template('survey')
+
