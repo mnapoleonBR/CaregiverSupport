@@ -42,18 +42,17 @@ input[type="radio"] {
 }
 
 label {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   display: block;
   font-size: 18px;
   color: #666;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
   padding: 20px 0;
   cursor: pointer;
 }
-label:first-child {
-  margin-bottom: 0;
-  border-bottom: none;
+label:last-child {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 .button,
