@@ -10,43 +10,37 @@
   <div class="modal-wrap">
     <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
     <div class="modal-bodies">
-      <div class="modal-body modal-body-step-1 is-showing">
-        <div class="title">Step 1</div>
-        <div class="description">Hello there, Let's play a game.</div>
-        <form>
-          <input type="text" placeholder="Name"/>
-          <input type="email" placeholder="Email"/>
-          <div class="text-center">
-            <div class="button">Start</div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-body modal-body-step-2">
-        <div class="title">Step 2</div>
-        <div class="description">Would you rather</div>
-        <form>
-          <label>
-            <input type="radio" name="radio"/>live one life that lasts 1,000 years?
-          </label>
-          <label>
-            <input type="radio" name="radio" id="radio2"/>live 10 lives that last 100 years each?
-          </label>
-          <div class="text-center fade-in">
-            <div class="button">Next</div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-body modal-body-step-3">
-        <div class="title">Step 3</div>
-        <div class="description">Check your email for the game results.</div>
+
+    <!-- Opening screen -->
+    <div class="modal-body modal-body-step-1 is-showing">
+      <div class="title"></div>
+      <div class="description">Hello there, Let's play a game.</div>
+      <form>
         <div class="text-center">
-          <div class="button">Done!</div>
+          <div class="button">Start</div>
         </div>
-      </div>
+      </form>
     </div>
-  </div>
-  <div class="text-center">
-    <div class="rerun-button">ReRun</div>
+
+    {% for question in questions %}
+      <div class="modal-body">
+        <div class="title">Step {{ loop.index }}</div>
+        <div class="description">{{ question["description"] }}</div>
+        <form>
+          <div>
+            {% for option in question["options"] %}
+              <label>
+                <input type="radio" name="{{ option['name'] }}"/>{{ option["text"] }}
+              </label>
+            {% endfor %}
+          </div>
+          <div class="text-center fade-in">
+            <div class="button">{{ question["button_text"] }}</div>
+          </div>
+        </form>
+      </div>
+    {% endfor %}
+    </div>
   </div>
 {% endblock %}
 
