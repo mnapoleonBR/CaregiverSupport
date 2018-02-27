@@ -8,34 +8,28 @@
 
 {% block content %}
   <div class="modal-wrap">
-    <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
+    <div class="modal-header">
+      <span class="is-active"></span>
+      {% for n in range(questions|length - 1) %}
+        <span></span>
+      {% endfor %}
+    </div>
     <div class="modal-bodies">
 
-    <!-- Opening screen -->
-    <div class="modal-body modal-body-step-1 is-showing">
-      <div class="title"></div>
-      <div class="description">Hello there, Let's play a game.</div>
-      <form>
-        <div class="text-center">
-          <div class="button">Start</div>
-        </div>
-      </form>
-    </div>
-
     {% for question in questions %}
-      <div class="modal-body">
+      <div class="modal-body {{ loop.first and 'is-showing' }}">
         <div class="title">Step {{ loop.index }}</div>
         <div class="description">{{ question["description"] }}</div>
         <form>
           <div>
             {% for option in question["options"] %}
               <label>
-                <input type="radio" name="{{ option['name'] }}"/>{{ option["text"] }}
+                <input type="radio" value="{{ option['val'] }}"/>{{ option["text"] }}
               </label>
             {% endfor %}
           </div>
           <div class="text-center fade-in">
-            <div class="button">{{ question["button_text"] }}</div>
+            <div class="button">{{ "Submit" if loop.last else "Next" }}</div>
           </div>
         </form>
       </div>
