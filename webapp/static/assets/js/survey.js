@@ -1,14 +1,22 @@
+var answers = []
+
 $('.button').click(function(){
   var $btn = $(this),
       $step = $btn.parents('.modal-body'),
       stepIndex = $step.index(),
-      $pag = $('.modal-header span').eq(stepIndex);
+      $pag = $('.modal-header span').eq(stepIndex),
+      $input = $btn.closest('form').find('input:checked');
 
-  step1($step, $pag);
+  answers.push($input.val() || 'none');
+
+  if ($step.next().length > 0) {
+    animateStep($step, $pag);
+  } else {
+    alert(answers.join(', '));
+  }
 });
 
-
-function step1($step, $pag){
+function animateStep($step, $pag){
   // animate the step out
   $step.addClass('animate-out');
   
@@ -27,3 +35,8 @@ function step1($step, $pag){
     
   }, 1200);
 }
+
+// only allow one input to be checked at a time
+$('input').on('change', function() {
+    $('input').not(this).prop('checked', false);  
+});
