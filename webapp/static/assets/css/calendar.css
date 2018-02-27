@@ -1,3 +1,69 @@
-#div1 {
-	background-color: pink;
+#wrapper {
+	display: grid;
+	grid-template-rows: 280px 520px;
+	grid-template-columns: 5fr 2fr;
+}
+
+#header {
+	background-color:orange;
+	grid-column: span 5;
+}
+
+#video {
+	background-color:blue;
+	grid-column: span 5;
+	grid-row: 2;
+	height: 520px;
+}
+
+#calendar-container {
+	width: 100%;
+}
+
+#calendar {
+	grid-column: span 1;
+	grid-row: 3;
+	height:100%;
+	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#event-info {
+	grid-column: span 2;
+	grid-row: 3;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#title {
+	font-size: 24pt;
+	font-family: "TradeGothic-BoldCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#title a {
+	text-transform: uppercase;
+	text-decoration: none;
+    font-weight: 800;
+	color: #ca6015;
+}
+
+#title a:hover {
+	opacity: 0.70;
+}
+
+#dateTime {
+	margin-top: -10px;
+	font-size: 10.25pt;
+	color: #6b6b6b;
+}
+
+#location {
+	margin-top: -10px;
+	font-size: 10.25pt;
+	color: #6b6b6b;
+}
+
+#description {
+	font-size: 13.5pt;
+	color: #474747;
 }
