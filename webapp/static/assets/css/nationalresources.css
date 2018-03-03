@@ -2,6 +2,18 @@ body {
 	font-family: 'Roboto Condensed', sans-serif !important;
 }
 
+.logo {
+	height: 100px;
+	width: auto;
+	color: pink;
+	margin:0px auto;
+	display: block;
+}
+
+.logo:hover {
+	opacity: .75;
+}
+
 .jumbotron {
 	height: 475px;
 	color: white;
@@ -15,7 +27,7 @@ body {
     url("../../img/cg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0% 35%;
+    background-position: 0% 30%;
 }
 
 .jumbotron h1 {
