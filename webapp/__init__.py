@@ -1,5 +1,5 @@
 from flask import Flask
-from helpers import template
+from webapp.helpers import template
 import os
 
 app = Flask(__name__)
