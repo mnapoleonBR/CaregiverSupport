@@ -1,35 +1,47 @@
 #wrapper {
 	display: grid;
-	grid-template-rows: 400px 1100px;
+	grid-template-rows: 800px 1100px;
 	grid-template-columns: 5fr 2fr;
 	margin-top: -10px;
 	margin-bottom: -10px;
 	margin-left: -10px;
 	margin-right: -10px;
+	-webkit-font-smoothing: antialiased;
+}
+
+#header img {
+	filter: grayscale(100%);
 }
 
 #header {
-	background-image: url("http://buildhealthyplaces.org/content/uploads/2015/12/Baker-Ripley-Grand-Opening-BB-186-copy-1.jpg");
+	background: 
+		linear-gradient(
+	      rgba(189, 78, 0, 0.75), 40%,
+	      rgba(255, 255, 255, 0.55) 60%
+	    ),		
+	    url(../../img/brbw.jpg);
 	background-repeat: no-repeat;
 	background-position: 50% 35%;
 	background-size: cover;
 	grid-column: span 5;
 	text-align: center;
 	color: white;
-	font-size: 34pt;
+	font-size: 22pt;
+	text-transform: uppercase;
+	font-family: "TradeGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #header h1 {
 	position: relative;
 	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	top: 20%;
+	top: 25%;
 }
 
 #video {
-	background: linear-gradient(white, white);
 	grid-column: span 5;
 	grid-row: 2;
 	height: 1100px;
+	background-color: #f8f8f8;
 	text-align: center;
 }
 
@@ -47,7 +59,7 @@
 }
 
 #calendar {
-	margin-left: 15px;
+	margin-left: 255px;
 	padding-top: 20px;
 	grid-column: span 1;
 	grid-row: 3;
@@ -61,7 +73,7 @@
 	grid-row: 3;
 	padding-top: 15px;
 	padding-left: 20px;
-	padding-right: 20px;
+	padding-right: 225px;
 	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 

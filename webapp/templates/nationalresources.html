@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley National Resources Page
+{% endblock %}
+
+{% block css %}
+	{{ super() }}
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }} />
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed" rel="stylesheet">
+	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
+
+
+ 
+{% endblock %}
+
+
+{% block content %}
+
+	<div class="jumbotron">
+		<div class="container">
+			<br> <br> 
+			<h1 class="text-center" style="padding-top: 70px">National Resources</h1>
+			<p class="text-center">There are a variety of national agencies and organizations that offer great general resources for caregivers. These are not the only resources available.
+			</p>
+		</div>
+	</div>
+	
+	<div class="container">
+		<a href="https://www.caregiver.org/" class="nounderline">
+			<div class="row">
+					<div class="col-md-10">
+						<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+						<h2>Family Caregiver Alliance</h2>
+						<p>The Family Caregiver Alliance provides a comprehensive set of resources to caregivers including on demand caregiver education webinars, disease specific fact sheets, and a caregiver connection portal.</p>
+					</div>
+			</div>
+		</a>
+		<a href="https://www.nia.nih.gov/" class="nounderline">
+			<div class="row">
+				<div class="col-md-10">
+					<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+					<h2>National Institutes on Aging</h2>
+					<p>The National Institutes on Aging’s website contains a wealth of knowledge on healthy aging as well as disease specific topic sheets.  The A-Z Health Topics page covers topics from Talking to Your Doctor to Legal and Financial Planning.</p>
+				</div>
+			</div>
+		</a>
+		<a href="https://www.aarp.org/caregiving/" class="nounderline">
+			<div class="row">
+				<div class="col-md-10">
+					<span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+					<h2>AARP Prepare to Care</h2>
+					<p>The AARP Prepare to Care Guide is offered in a variety of languages and cultures.  The guidebook provides family caregivers with a detailed outline to begin their caregiver journey.  It includes sample caregiving plans, goals and checklists to help caregivers get organized.
+					</p>
+				</div>
+			</div>
+		</a>
+		<a href="http://www.caregiving.org/" class="nounderline">
+			<div class="row">
+				<div class="col-md-10">
+					<span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+					<h2>National Alliance for Caregiving</h2>
+					<p>National Alliance for Caregiving is committed to advancing family caregiving through research, innovation and advocacy. The organizations website contains information on  advocacy efforts and a list of helpful caregiving resources. 
+					</p>
+				</div>
+			</div>
+		</a>
+		<a href="http://caregiveraction.org/" class="nounderline">
+			<div class="row">
+				<div class="col-md-10">
+					<span class="glyphicon glyphicon-console" aria-hidden="true"></span>
+					<h2>Caregiver Action Network</h2>
+					<p>Caregiver Action Network directs caregivers to resources based on their caregiving situation. All caregiving situations have access to caregiver stories, videos, tips and the Family Caregiver Toolbox. The Family Caregiver Toolbox connects caregivers to resources on Nutrition Counseling, Technology, Respite Care, Medication Checklist and beyond.
+					</p>
+				</div>
+			</div>
+		</a>
+	</div>
+
+
+
+
+{% endblock %}

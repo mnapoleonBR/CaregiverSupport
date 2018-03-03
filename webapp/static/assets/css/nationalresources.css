@@ -1,0 +1,74 @@
+body {
+	font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.jumbotron {
+	height: 475px;
+	color: white;
+	background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.35), 
+      rgba(0, 0, 0, 0.35)
+    ),
+    /* bottom, image */
+    url("../../img/cg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 35%;
+}
+
+.jumbotron h1 {
+	text-transform: uppercase;
+	font-size: 40pt;
+	font-weight: bolder !important;
+}
+
+.jumbotron p {
+	font-family: 'Lato', sans-serif;
+	font-size: 16pt;
+	font-style: normal;
+	font-weight: 100;
+}
+
+.row {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	color:white;
+	background-color: #ca6015;
+	border-radius: 8px;
+}
+
+.row:hover {
+	opacity: .85;
+}
+
+.nounderline {	
+	text-decoration: none !important;
+	color: white;
+}
+
+.nounderline a:hover {
+	opacity: .40;
+}
+
+.nounderline h2{	
+	font-family: 'Roboto Condensed', sans-serif !important;
+	font-weight: 600;
+	font-size: 28pt;
+}
+
+.nounderline p{	
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	font-size: 15pt;
+	font-style: italic;
+	color: #fafafa;
+}
+
+
