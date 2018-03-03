@@ -1,0 +1,40 @@
+.header-logo {
+  height: 100px;
+  width: auto;
+  color: pink;
+  margin:0px auto;
+  display: block;
+}
+
+.header-logo:hover {
+  opacity: .75;
+}
+
+.jumbotron {
+  height: 475px;
+  color: white;
+  background: 
+    /* top, transparent red, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+    /* bottom, image */
+    url("../../img/cg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 30%;
+}
+
+.jumbotron h1 {
+  text-transform: uppercase;
+  font-size: 40pt;
+  font-weight: bolder !important;
+}
+
+.jumbotron p {
+  font-family: 'Lato', sans-serif;
+  font-size: 16pt;
+  font-style: normal;
+  font-weight: 100;
+}

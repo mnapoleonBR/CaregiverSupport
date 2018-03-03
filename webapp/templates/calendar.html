@@ -8,10 +8,6 @@ Baker Ripley Calendar of Events
 	{{ super() }}
 	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='assets/css/fullcalendar-custom.css') }} />
-	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/moment/moment.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.min.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/gcal.js') }}></script>
  
 {% endblock %}
 
@@ -19,9 +15,9 @@ Baker Ripley Calendar of Events
 {% block content %}
 
 <div id='wrapper'>
-	<div id='header'>
-		<h1> Events </h1>
-	</div>
+	{% set title = "National Caregiver Resources" %}
+	{% set description = "There are a variety of national agencies and organizations that offer great general resources for caregivers. These are not the only resources available." %}
+	{% include 'header.html' %}
 	<div id='video'>
 		<iframe 
 		src="https://www.youtube.com/embed/dSVLrFeDbYo">
@@ -36,6 +32,15 @@ Baker Ripley Calendar of Events
 
 	</div>
 </div>
+
+{% block js %}
+	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/moment/moment.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.min.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/gcal.js') }}></script>
+	{{ super() }}
+{% endblock %}
 
 
 {% endblock %}
