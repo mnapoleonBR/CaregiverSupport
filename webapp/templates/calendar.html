@@ -7,25 +7,16 @@ Baker Ripley Calendar of Events
 {% block css %}
 	{{ super() }}
 	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.css') }} />
-<<<<<<< HEAD
 	<link rel='stylesheet' href={{ url_for('static', filename='assets/css/fullcalendar-custom.css') }} />
 	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
 	<script src={{ url_for('static', filename='node_modules/moment/moment.js') }}></script>
 	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.min.js') }}></script>
 	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/gcal.js') }}></script>
-
-=======
-	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/moment/moment.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.min.js') }}></script>
->>>>>>> c90b3f5... Basic calendar with no styling
  
 {% endblock %}
 
 
 {% block content %}
-
-<<<<<<< HEAD
 
 <div id='wrapper'>
 	<div id='header'>
@@ -45,10 +36,6 @@ Baker Ripley Calendar of Events
 
 	</div>
 </div>
-
-=======
-<div id='calendar'></div>
->>>>>>> c90b3f5... Basic calendar with no styling
 
 
 {% endblock %}
