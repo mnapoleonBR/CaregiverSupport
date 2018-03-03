@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #wrapper {
 	display: grid;
 	grid-template-rows: 800px 1100px;
@@ -107,4 +108,8 @@
 #description {
 	font-size: 13.5pt;
 	color: #474747;
+=======
+#div1 {
+	background-color: pink;
+>>>>>>> c90b3f5... Basic calendar with no styling
 }

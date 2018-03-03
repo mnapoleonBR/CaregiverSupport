@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(function() {
     // page is now ready, initialize the calendar...
     $('#calendar').fullCalendar({
@@ -54,3 +55,20 @@ function mouseOverFill(event) {
 	} 
 
 } 
+=======
+
+
+
+$(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+    console.log("here?")
+    $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        defaultDate: '2014-09-12',
+        editable: true,
+        eventLimit: true
+    })
+
+});
+>>>>>>> c90b3f5... Basic calendar with no styling

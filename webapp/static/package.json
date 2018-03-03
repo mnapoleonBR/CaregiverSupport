@@ -17,10 +17,16 @@
   },
   "homepage": "https://github.com/chelsesteele/baker-ripley#readme",
   "dependencies": {
+<<<<<<< HEAD
     "bootstrap": "^4.0.0",
     "fullcalendar": "^3.8.2",
     "jquery": "^3.3.1",
     "moment": "^2.20.1",
     "popper.js": "^1.12.9"
+=======
+    "fullcalendar": "^3.8.2",
+    "jquery": "^3.3.1",
+    "moment": "^2.20.1"
+>>>>>>> c90b3f5... Basic calendar with no styling
   }
 }
