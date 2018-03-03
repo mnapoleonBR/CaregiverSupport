@@ -32,7 +32,11 @@ questions = [
 
 @app.route('/')
 def home():
-    return template('home', names=['Chelse', 'Elaine', 'Jared', 'Tyler', 'Valeria'])
+    return template('home')
+
+@app.route('/news')
+def news():
+    return template('news')
 
 @app.route('/calendar')
 def calendar():
@@ -42,7 +46,7 @@ def calendar():
 def nationalResources():
     return template('nationalresources')
 
-@app.route('/test')
+@app.route('/assessment')
 def test():
     return template('survey', questions=questions)
 
