@@ -12,3 +12,7 @@ def home():
 def calendar():
     return template('calendar')
 
+@app.route('/nationalresources')
+def nationalResources():
+    return template('nationalresources')
+
