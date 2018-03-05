@@ -42,7 +42,7 @@ def news():
 def calendar():
     return template('calendar')
 
-@app.route('/nationalresources')
+@app.route('/national-resources')
 def nationalResources():
     return template('nationalresources')
 

@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron jumbotron-fluid">
     <div class="container">
         <a href="/">
             <img class="text-center header-logo" src={{ url_for('static', filename='img/brLogo.png') }} alt="Nci logo">    
@@ -9,5 +9,40 @@
                 {{ description }}
             </p>
         {% endif %}
+        </div>
     </div>
+    <button class="hamburger hamburger--spin" type="button" onclick="toggleMenu(this)">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
 </div>
+<div id="site-nav-buffer" class="nav-open">
+    <ul>
+        <li>
+            <a href="/calendar">Calendar</a>
+        </li>
+        <li>
+            <a href="/connections">Caregiver Connections</a>
+        </li>
+        <li>
+            <a href="/assessment">Assessment Tool</a>
+        </li>
+        <li>
+            <a href="/updates">Updates/News</a>
+        </li>
+        <li>
+            <a href="/local-resources">Local Resource Finder</a>
+        </li>
+        <li>
+            <a href="/national-resources">National Resources</a>
+        </li>
+    </ul>
+    <div id="buffer"></div>
+</div>
+<script>
+function toggleMenu(button) {
+    button.classList.toggle("is-active");
+    document.body.classList.toggle("menu-activated");
+}
+</script>
