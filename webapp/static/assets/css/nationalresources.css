@@ -13,6 +13,7 @@ body {
 	color:white;
 	background-color: #ca6015;
 	border-radius: 8px;
+	text-align: left;
 }
 
 .row:hover {
