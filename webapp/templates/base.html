@@ -10,6 +10,7 @@
 
     {% block css %}
     <!-- Stylesheets -->
+    <link rel='stylesheet' href={{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }} />
     <link rel='stylesheet' href={{ url_for('static', filename='assets/css/header.css') }} />
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Condensed" rel="stylesheet">
     <link rel='stylesheet' href="{{ csspath }}" />
