@@ -21,6 +21,7 @@ BakerRipley Calendar of Events
 {% set description = "Find events happening in your local community." %}
 {% include 'header.html' %}
 
+<div class="container-fluid">
 	<div class="row" id="video">
 		<div class="embed-responsive embed-responsive-16by9 col-sm-8 offset-md-2" >	
 			<iframe class="embed-responsive-item" allowfullscreen src="https://www.youtube.com/embed/dSVLrFeDbYo">
@@ -29,10 +30,10 @@ BakerRipley Calendar of Events
 	</div>
 
 	<div class="row" id="calendarRow">
-		<div class="col-md-9">
+		<div class="col-md-8">
 			<div id='calendar'></div>
 		</div>
-		<div class="col-md-3" id="eventCol">
+		<div class="col-md-4" id="eventCol">
 			<div id='event-info'>
 				<div id='title'> </div>
 				<div id='dateTime'></div>
@@ -41,6 +42,7 @@ BakerRipley Calendar of Events
 			</div>
 		</div>
 	</div>
+</div>
 
 {% endblock %}
 
