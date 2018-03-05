@@ -17,9 +17,11 @@ BakerRipley Calendar of Events
 
 {% block content %}
 
-	{% set title = "Event Calendar" %}
-	{% set description = "Connect with others in your local community." %}
-	{% include 'header.html' %}
+{% set title = "Event Calendar" %}
+{% set description = "Connect with others in your local community." %}
+{% include 'header.html' %}
+
+<div class="container">
 
 	<div class="row" id="video">
 		<div class="embed-responsive embed-responsive-16by9 col-sm-8 offset-md-2" >	
@@ -41,6 +43,9 @@ BakerRipley Calendar of Events
 			</div>
 		</div>
 	</div>
+</div>
+
+{% endblock %}
 
 {% block js %}
 	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
@@ -51,5 +56,3 @@ BakerRipley Calendar of Events
 	{{ super() }}
 {% endblock %}
 
-
-{% endblock %}
