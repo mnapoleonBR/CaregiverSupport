@@ -173,9 +173,9 @@
     transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 #site-nav-buffer {
-  overflow: hidden;
+  overflow: auto;
   background-color: #ca6015;
-  opacity: 0;
+  display: none;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -188,7 +188,7 @@
 }
 
 body.menu-activated #site-nav-buffer {
-  opacity: 1;
+  display: block;
 }
 
 body.menu-activated {
@@ -199,9 +199,8 @@ body.menu-activated {
   list-style-type: none;
   padding-left: 0;
   display: inline-block;
-  margin-top: 250px;
+  margin-top: 200px;
   position: relative;
-  overflow: auto;
 }
 
 #site-nav-buffer ul > li:first-child {
@@ -218,7 +217,7 @@ body.menu-activated {
   display: block;
   text-decoration: none;
   transition: all .3s ease-in-out;
-  font-size: 50px;
+  font-size: 40px;
   padding: 10px 0px;
 }
 
@@ -229,15 +228,4 @@ body.menu-activated {
 #buffer {
   height: 300px;
 }
-
-
-
-
-
-
-
-
-
-
-
 

@@ -6,8 +6,7 @@ BakerRipley National Resources Page
 
 {% block css %}
 	{{ super() }}
-	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
+	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }} />
 {% endblock %}
 
 
@@ -68,7 +67,9 @@ BakerRipley National Resources Page
 		</a>
 	</div>
 
+{% endblock %}
 
-
-
+{% block js %}
+	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
 {% endblock %}

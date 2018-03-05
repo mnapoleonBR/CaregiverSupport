@@ -5,6 +5,10 @@
 	padding-bottom: 40px;
 }
 
+/*.container {
+	margin: 0px;
+}*/
+
 #calendar {
 	height:100%;
 	font-family: 'Lato', sans-serif;
