@@ -175,7 +175,8 @@
 #site-nav-buffer {
   overflow: auto;
   background-color: #ca6015;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -188,7 +189,8 @@
 }
 
 body.menu-activated #site-nav-buffer {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 body.menu-activated {
@@ -216,7 +218,9 @@ body.menu-activated {
   color: #fff;
   display: block;
   text-decoration: none;
+  /* these transitions aren't working!!!! */
   transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
   font-size: 40px;
   padding: 10px 0px;
 }
