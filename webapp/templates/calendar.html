@@ -6,7 +6,6 @@ BakerRipley Calendar of Events
 
 {% block css %}
 	{{ super() }}
-	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/bootstrap/dist/css/bootstrap.min.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='assets/css/fullcalendar-custom.css') }} />
 	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
