@@ -1,0 +1,7 @@
+{
+    "name": "bakerripley",
+    "version": "0.1.0",
+    "scripts": {
+        "postinstall": "npm install --prefix webapp/static"
+    }
+}

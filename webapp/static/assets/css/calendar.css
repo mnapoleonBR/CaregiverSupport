@@ -1,86 +1,35 @@
-#wrapper {
-	display: grid;
-	grid-template-rows: 800px 1100px;
-	grid-template-columns: 5fr 2fr;
-	margin-top: -10px;
-	margin-bottom: -10px;
-	margin-left: -10px;
-	margin-right: -10px;
-	-webkit-font-smoothing: antialiased;
+#calendarRow {
+	padding-top: 100px;
+	padding-left: 45px;
+	padding-right: 30px;
+	padding-bottom: 40px;
 }
 
-#header img {
-	filter: grayscale(100%);
-}
-
-#header {
-	background: 
-		linear-gradient(
-	      rgba(189, 78, 0, 0.75), 40%,
-	      rgba(255, 255, 255, 0.55) 60%
-	    ),		
-	    url(../../img/brbw.jpg);
-	background-repeat: no-repeat;
-	background-position: 50% 35%;
-	background-size: cover;
-	grid-column: span 5;
-	text-align: center;
-	color: white;
-	font-size: 22pt;
-	text-transform: uppercase;
-	font-family: "TradeGothic", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-#header h1 {
-	position: relative;
-	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	top: 25%;
-}
-
-#video {
-	grid-column: span 5;
-	grid-row: 2;
-	height: 1100px;
-	background-color: #f8f8f8;
-	text-align: center;
-}
-
-#video iframe {
-	 width: 80%;
-	 height: 80%;
-	 position: relative;
-	 top: 50%;
-	 transform: translateY(-50%);
-}
-
-#calendar-container {
-	width: 100%;
-	background-color: pink;
-}
+/*.container {
+	margin: 0px;
+}*/
 
 #calendar {
-	margin-left: 255px;
-	padding-top: 20px;
-	grid-column: span 1;
-	grid-row: 3;
 	height:100%;
-	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Lato', sans-serif;
+}
+
+#eventCol {
+	border: 0.75px solid black;
+	background-color: #f7f7f7;
+	border-radius: 8px;
 }
 
 #event-info {
-	padding-top: 20px;
-	grid-column: span 2;
-	grid-row: 3;
-	padding-top: 15px;
-	padding-left: 20px;
-	padding-right: 225px;
-	font-family: "TradeGothic-Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 }
 
 #title {
+	padding-top: 10px;
 	font-size: 24pt;
-	font-family: "TradeGothic-BoldCn", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 }
+
 #title a {
 	text-transform: uppercase;
 	text-decoration: none;
@@ -93,18 +42,20 @@
 }
 
 #dateTime {
-	margin-top: -10px;
-	font-size: 10.25pt;
+	margin-top: -4px;
+	font-size: 11.5pt;
 	color: #6b6b6b;
+
 }
 
 #location {
-	margin-top: -10px;
-	font-size: 10.25pt;
+	margin-top: -18px;
+	font-size: 11.5pt;
 	color: #6b6b6b;
 }
 
 #description {
-	font-size: 13.5pt;
+	font-size: 15pt;
 	color: #474747;
+	font-family: 'Lato', sans-serif;
 }
