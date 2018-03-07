@@ -16,6 +16,13 @@ body {
 	text-align: left;
 }
 
+@media only screen and (max-width: 1500px) and (min-width: 800px){
+	.row-padding {
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+
 .row:hover {
 	opacity: .85;
 }
