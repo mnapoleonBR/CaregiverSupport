@@ -1,7 +1,11 @@
 html {
-  background: radial-gradient(#FFF176, #F57F17);
+  background: radial-gradient(#ca8f11, #ca6015);
   min-height: 100%;
   font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: transparent;
 }
 
 .title {
@@ -153,11 +157,6 @@ label:last-child {
   -webkit-animation: in 500ms ease-in-out forwards;
           animation: in 500ms ease-in-out forwards;
   display: block;
-}
-
-.animate-up {
-  -webkit-transform: translateY(-500px) rotate(30deg);
-          transform: translateY(-500px) rotate(30deg);
 }
 
 @-webkit-keyframes out {
