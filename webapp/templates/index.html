@@ -10,19 +10,24 @@ BakerRipley Homepage
 	<link rel='stylesheet' href={{ url_for('static', filename='css/jquery.bxslider.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='css/style.css') }} />
 
-	<script src={{ url_for('static', filename='js/jquery-2.1.1.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/bootstrap.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.easing.1.3.js') }}></script>
-	<script src={{ url_for('static', filename='js/jquery.bxslider.min.js') }}></script>
-	<script src={{ url_for('static', filename='js/functions.js') }}></script>
-	<script>
+	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+
+	<script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
+
+	<!--<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.easing.1.3.js') }}></script>--> 
+
+	<script src={{ url_for('static', filename='assets/css/jquery.bxslider.min.js') }}></script>
+	<script src={{ url_for('static', filename='assets/js/functions.js') }}></script>
+	
+
+	<!--<script>
 	wow = new WOW(
 	 {
 	
 		}	) 
 		.init();
-	</script>
+	</script>-->
 {% endblock %}
 
 
@@ -53,9 +58,9 @@ BakerRipley Homepage
    <!--CHANGE IMAGES! -->
 	<div class="slider">
 		<ul class="bxslider">				
-			<li><img src="images/slider/1.jpg" alt=""/></li>
-			<li><img src="images/slider/2.jpg" alt=""/></li>	
-			<li><img src="images/slider/3.jpg" alt=""/></li>	
+			<li><img src="img/slider/1.jpg" alt=""/></li>
+			<li><img src="img/slider/2.jpg" alt=""/></li>	
+			<li><img src="img/slider/3.jpg" alt=""/></li>	
 		</ul>
     </div>
 	
