@@ -50,3 +50,7 @@ def nationalResources():
 def test():
     return template('survey', questions=questions)
 
+@app.route('/respite')
+def respite():
+    return template('respite')
+
