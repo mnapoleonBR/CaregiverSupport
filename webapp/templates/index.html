@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Homepage
+{% endblock %}
+
+{% block css %}
+	{{ super() }}
+	<link rel='stylesheet' href={{ url_for('static', filename='css/font-awesome.min.css') }} />
+	<link rel='stylesheet' href={{ url_for('static', filename='css/jquery.bxslider.css') }} />
+	<link rel='stylesheet' href={{ url_for('static', filename='css/style.css') }} />
+
+	<script src={{ url_for('static', filename='js/jquery-2.1.1.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/bootstrap.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/wow.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.easing.1.3.js') }}></script>
+	<script src={{ url_for('static', filename='js/jquery.bxslider.min.js') }}></script>
+	<script src={{ url_for('static', filename='js/functions.js') }}></script>
+	<script>
+	wow = new WOW(
+	 {
+	
+		}	) 
+		.init();
+	</script>
+{% endblock %}
+
+
+
+{% block content %}
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+	<header>		
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="navigation">
+				<div class="container">					
+					<div class="navbar-header">
+						<div class="navbar-brand">
+							<a href="index.html"><h1><span>Baker Ripley</span></h1></a>
+						</div>
+					</div>						
+				</div>
+			</div>	
+		</nav>	
+		<br>	
+	</header>
+
+   <!--CHANGE IMAGES! -->
+	<div class="slider">
+		<ul class="bxslider">				
+			<li><img src="images/slider/1.jpg" alt=""/></li>
+			<li><img src="images/slider/2.jpg" alt=""/></li>	
+			<li><img src="images/slider/3.jpg" alt=""/></li>	
+		</ul>
+    </div>
+	
+	<div class="container">
+		<div class="text-center">
+			<h3>Connecting You to What You Need</h3>
+		</div>
+	</div>
+	
+	<div class="box">
+		<div class="col-sm-3">
+			<i class="fa fa-calendar fa-3x"></i>
+			<h4>Calendar of Events</h4>
+		</div>
+	
+		<div class="col-sm-3">
+			<i class="fa fa-check-circle fa-3x"></i>
+			<h4>Caregiver Assesment Tool</h4>
+		</div>
+	
+		<div class="col-sm-3">
+			<i class="fa fa-heart-o fa-3x"></i>
+			<h4>Resource Finder</h4>
+		</div>
+	
+		<div class="col-sm-3">
+			<i class="fa fa-bell fa-3x"></i>
+			<h4>Updates and News</h4>
+		</div>
+
+		<div class="col-sm-3">
+			<i class="fa fa-search-plus fa-3x"></i>
+			<h4>Local Resource Finder</h4>
+		</div>
+
+		<div class="col-sm-3">
+			<i class="fa fa-compass fa-3x"></i>
+			<h4>National Resource Finder</h4>
+		</div>
+	</div>
+
+	<!-- keeping for spacing -->
+	<div class="about-us">
+		<div class="container">
+			<div class="text-center">
+				<!-- leave blank --> 
+			</div>	
+		</div>
+	</div>
+	<!-- keeping for spacing -->
+
+	<footer>
+		<div class="footer">
+			<div class="container">
+			</div>
+		</div>
+	</footer>
+	
+  </body>
+  {% endblock %}
+</html>
