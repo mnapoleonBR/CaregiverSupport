@@ -10,12 +10,12 @@ BakerRipley Homepage
 	<link rel='stylesheet' href={{ url_for('static', filename='assets/css/jquery.bxslider.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='assets/css/style.css') }} />
 
-	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.js') }}></script>
 	<script src={{ url_for('static', filename='node_modules/jquery.easing/jquery.easing.js') }}></script>
 	<script src={{ url_for('static', filename='node_modules/bxslider/dist/jquery.bxslider.min.js') }}></script>
 	<script src={{ url_for('static', filename='assets/js/functions.js') }}></script>
-	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery-2.1.1.js') }}></script>
-
+<!-- 	<script src={{ url_for('static', filename='node_modules/jquery/dist/jquery-2.1.1.js') }}></script>
+ -->
 
 {% endblock %}
 
@@ -29,29 +29,19 @@ BakerRipley Homepage
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-	<header>		
-		<nav class="navbar navbar-default navbar-static-top" role="navigation">
-			<div class="navigation">
-				<div class="container">					
-					<div class="navbar-header">
-						<div class="navbar-brand">
-							<a href="index.html"><h1><span>Baker Ripley</span></h1></a>
-						</div>
-					</div>						
-				</div>
-			</div>	
-		</nav>	
-		<br>	
-	</header>
+	
+	{% set title = "BakerRipley Caregiver Homepage" %}
+	{% set description = "Text tbd" %}
+	{% include 'header.html' %}
 
    <!--CHANGE IMAGES! -->
-	<div class="slider">
+<!-- 	<div class="slider">
 		<ul class="bxslider">				
 			<li><img src={{ url_for('static', filename='assets/images/slider/1.jpg') }} alt=""/></li>
 			<li><img src={{ url_for('static', filename='assets/images/slider/1.jpg') }} alt=""/></li>
 			<li><img src={{ url_for('static', filename='assets/images/slider/1.jpg') }} alt=""/></li>	
 		</ul>
-    </div>
+    </div> -->
 	
 	<div class="container">
 		<div class="text-center">
@@ -59,33 +49,41 @@ BakerRipley Homepage
 		</div>
 	</div>
 	
-	<div class="box">
-		<div class="col-sm-3">
-			<i class="fa fa-calendar fa-3x"></i>
-			<h4>Calendar of Events</h4>
+	<div class="row">
+		<div class="box">
+			<div class="col-md-4">
+				<i class="fa fa-calendar fa-3x"></i>
+				<h4>Calendar of Events</h4>
+			</div>
 		</div>
 	
-		<div class="col-sm-3">
-			<i class="fa fa-check-circle fa-3x"></i>
-			<h4>Caregiver Assesment Tool</h4>
+		<div class="box">
+			<div class="col-md-4">
+				<i class="fa fa-check-circle fa-3x"></i>
+				<h4>Caregiver Assesment Tool</h4>
+			</div>
 		</div>
 	
-		<div class="col-sm-3">
-			<i class="fa fa-heart-o fa-3x"></i>
-			<h4>Resource Finder</h4>
+		<div class="box">
+			<div class="col-md-4">
+				<i class="fa fa-heart-o fa-3x"></i>
+				<h4>Resource Finder</h4>
+			</div>
 		</div>
-	
-		<div class="col-sm-3">
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
 			<i class="fa fa-bell fa-3x"></i>
 			<h4>Updates and News</h4>
 		</div>
 
-		<div class="col-sm-3">
+		<div class="col-md-4">
 			<i class="fa fa-search-plus fa-3x"></i>
 			<h4>Local Resource Finder</h4>
 		</div>
 
-		<div class="col-sm-3">
+		<div class="col-md-4">
 			<i class="fa fa-compass fa-3x"></i>
 			<h4>National Resource Finder</h4>
 		</div>
