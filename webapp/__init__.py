@@ -32,7 +32,7 @@ questions = [
 
 @app.route('/')
 def home():
-    return template('home')
+    return template('index')
 
 @app.route('/news')
 def news():

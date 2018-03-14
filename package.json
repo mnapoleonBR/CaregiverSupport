@@ -3,5 +3,8 @@
     "version": "0.1.0",
     "scripts": {
         "postinstall": "npm install --prefix webapp/static"
+    },
+    "dependencies": {
+        "font-awesome": "^4.7.0"
     }
 }
