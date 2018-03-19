@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Long Term Care Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Long Term Care Options" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        At some point in your caregiving your loved one may require more assistance than you are able to provide, in these instances long term care services may be needed. This section will review types of long term care, strategies for identifying the appropriate option and resources for paying for long term care.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h1>Where can I access Long-Term Care Services?</h1>
+    <p>
+        <strong>
+            1) In-home:
+        </strong>
+        These services can be provided in your own home. Hours are based on the individual’s needs. The services include: personal care services, skilled care services, transportation.
+    </p>
+    <p>
+        <strong>
+            2) Adult Day programs:
+        </strong>
+        Adult Day Centers provide care outside of the home and is designed to provide a social outlet for participants. Daily activities include: music, recreation, exercise, support and some medical services. These services are usually offered Monday-Friday during normal business hours.
+    </p>
+    <p>
+        <strong>
+            3) Residential:
+        </strong>
+        Sometimes your loved one may need more care that can no longer be provided in the home. In those cases, residential care options may be right for you. These options include nursing home or an assisted living facilities.
+    </p>
+
+    <h1>Long-term Care Provider Search</h1>
+    <p>
+        The Texas Health and Human Services Long-term Care Provider Search tool can be used to locate long-term care facilities near you. The search engine can be filtered by county and the type of services needed. The tool can be accessed <a href="https://apps.hhs.texas.gov/ltcsearch/providersearch.cfm">here.</a>
+    </p>
+    <h1>How do I pay for care?</h1>
+    <p>
+        Long term care can be expensive. However, here are a few resources that may help.
+    </p>
+    <p>
+        <strong>
+           Veterans Benefits:
+        </strong>
+        If you are caring for a veteran, you may be eligible to receive <a href="https://www.caregiver.va.gov/Care_Veterans.asp">assistance to pay for long term care.</a>  This care can be offered in home, residential care or an adult day health program.
+    </p>
+    <p>
+        <strong>Long-term Care Insurance</strong> is an insurance policy designed to pay for the beneficiaries care in the above mentioned long term care facilities. Each policy is unique and may pay for different levels of care. Talk to your loved to determine if they have already obtained a policy.
+    </p>
+    <p>
+        <strong>Medicaid</strong> is also a payment option. However, there are eligibility rules including income and assets. Click <a href="/">here</a> to find out more.
+    </p>
+</div>
+
+
+{% endblock %}

@@ -54,3 +54,7 @@ def test():
 def respite():
     return template('respite')
 
+@app.route('/long-term')
+def long_term():
+    return template('long_term_care')
+

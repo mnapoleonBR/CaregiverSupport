@@ -4,6 +4,11 @@
 BakerRipley Respite Resource
 {% endblock %}
 
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
 {% block content %}
 
 {% set title = "Respite: How to Take a Break" %}
