@@ -44,8 +44,7 @@ $(document).ready(function() {
   });
 
   $(".resultPanel").click(function(e) {
-    resourceName = e.target.id;
-    // console.log(resourceName)
+    resourceName = e.target.parentNode.id;
     window.location.href = "/resource/" + resourceName;
   });
 });
