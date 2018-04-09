@@ -28,7 +28,7 @@ def test():
 
 @app.route('/resource/<resource_name>')
 def resource_page(resource_name):
-    if resource_name in resources_list:
+    if resource_name in resourceToKeywords:
         return template(resource_name)
     abort(404)
 
