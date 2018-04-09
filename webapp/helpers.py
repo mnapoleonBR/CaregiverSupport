@@ -1,4 +1,5 @@
 from flask import render_template
+from collections import defaultdict
 import os
 
 JS_MODULE = '/static/assets/js/{0}.js'
@@ -12,3 +13,10 @@ def template(filename, **kwargs):
 
 def env_is_dev():
     return os.environ.get('PROD') != "true"
+
+def createKeywordToResourceMap(resourceToKeywords):
+    keywordToResources = defaultdict(list)
+    for resource_name, resource_object in resourceToKeywords.items():
+        for keyword in resource_object["keywords"]:
+            keywordToResources[keyword].append(resource_name)
+    return keywordToResources

@@ -1,8 +1,6 @@
 $(document).ready(function() {
-  var keywordMap = {
-    "Keyword 1": ["respite", "stress"],
-    "Keyword 2": ["long-term", "dementia"],
-  };
+
+  var keywordMap = contextVar // this is set in the template
 
   // need to hold onto the resource references since they will be detached from DOM
   var $allResources = $(".resultColumn");
@@ -11,7 +9,7 @@ $(document).ready(function() {
   // Setting up the autocomplete
   var input = document.getElementById("resourceSearchBar");
   new Awesomplete(input, {
-    list: ["Keyword 1", "Keyword 2"],
+    list: Object.keys(keywordMap),
     autoFirst: true,
     minChars: 1,
     filter: Awesomplete.FILTER_STARTSWITH,

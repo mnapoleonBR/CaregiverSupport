@@ -17,7 +17,7 @@ BakerRipley Local Resources Page
 
 <div class="content">
     <div class="searchBarContainer">
-        <input class="searchBar" id="resourceSearchBar" placeholder="What are you looking for?"></input>
+        <input class="searchBar" id="resourceSearchBar" placeholder="Examples: rest, homecare, long-term care"></input>
     </div>
     <div class="resourcesResultsContainer">
         <div class="resourceResults">
@@ -44,6 +44,11 @@ BakerRipley Local Resources Page
         </div>
     </div>
 </div>
+
+<script>
+    // make the keywordToResource dictionary available to Javascript code
+    contextVar = {{ keywordToResources | safe }}
+</script>
 
 {% endblock %}
 
