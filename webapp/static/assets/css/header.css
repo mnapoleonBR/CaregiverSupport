@@ -4,7 +4,7 @@
 }
 
 .header-logo {
-  height: 120px;
+  height: 100px;
   width: auto;
   margin: 0px auto;
   display: inline-block;
@@ -18,7 +18,6 @@
 
 .jumbotron {
   position: relative;
-  height: 475px;
   color: white;
   background: 
     linear-gradient(
@@ -34,17 +33,18 @@
 
 .jumbotron h1 {
   text-transform: uppercase;
-  font-size: 40pt;
+  font-size: 30pt;
   font-weight: bolder !important;
   font-family: 'Roboto Condensed', sans-serif !important;
 }
 
 .jumbotron p {
   font-family: 'Lato', sans-serif;
-  font-size: 18pt;
+  font-size: 16pt;
   font-style: normal;
   font-weight: 100;
   color:white;
+  margin-top: 20px;
 }
 
 .top-bar, .middle-bar, .bottom-bar {
@@ -205,7 +205,7 @@ body.menu-activated {
   /* these transitions aren't working!!!! */
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
-  font-size: 40px;
+  font-size: 30px;
   padding: 10px 0px;
 }
 

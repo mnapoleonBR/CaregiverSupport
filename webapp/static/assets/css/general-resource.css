@@ -4,13 +4,13 @@
   justify-content: center;
   text-align: center;
   margin-top: -2rem;
-  min-height: 300px;
+  min-height: 170px;
   background-color: #ca6015;
 }
 
 .resource-intro-text {
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   color: #fff;
   max-width: 70%;
   padding: 60px 0px;
