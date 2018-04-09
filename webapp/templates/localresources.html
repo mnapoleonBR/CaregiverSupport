@@ -5,6 +5,7 @@ BakerRipley Local Resources Page
 {% endblock %}
 
 {% block css %}
+    <link rel="stylesheet" href={{ url_for('static', filename='node_modules/awesomplete/awesomplete.css') }}>
     {{ super() }}
 {% endblock %}
 
@@ -14,7 +15,40 @@ BakerRipley Local Resources Page
 {% set title = "Local Caregiver Resources" %}
 {% include 'header.html' %}
 
-<div>
+<div class="content">
+    <div class="searchBarContainer">
+        <input class="searchBar" id="resourceSearchBar" placeholder="What are you looking for?"></input>
+    </div>
+    <div class="resourcesResultsContainer">
+        <div class="resourceResults">
+            <div class="resultColumn" id="respite">
+                <div class="resultPanel">
+                    <h3>Respite</h3>
+                </div>
+            </div>
+            <div class="resultColumn" id="long-term">
+                <div class="resultPanel">
+                    <h3>Long-term Care</h3>
+                </div>
+            </div>
+            <div class="resultColumn" id="stress">
+                <div class="resultPanel">
+                    <h3>Stress Management</h3>
+                </div>
+            </div>
+            <div class="resultColumn" id="dementia">
+                <div class="resultPanel">
+                    <h3>Dementia</h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
+{% endblock %}
+
+{% block js %}
+    <script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/awesomplete/awesomplete.js') }}></script>
+    {{ super() }}
 {% endblock %}

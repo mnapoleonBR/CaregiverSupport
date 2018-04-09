@@ -31,3 +31,6 @@ def resource_page(resource_name):
         return template(resource_name)
     abort(404)
 
+@app.route('/local-resources')
+def local_resources():
+    return template('localresources')
