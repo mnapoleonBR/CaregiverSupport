@@ -59,3 +59,62 @@
 	color: #474747;
 	font-family: 'Lato', sans-serif;
 }
+
+.modal-button {
+	color: white;
+	background-color: #ca6015;
+	border:none;
+	font-size: 16pt;
+	margin-bottom: 30px;
+}
+
+
+.btn {
+	border:none;
+}
+
+.btn:hover {
+	opacity:.75;
+}
+
+.button-orange {
+	background-color:#ca6015;
+}
+
+.button-orange:hover {
+	background-color:#ca6015;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-close {
+	background-color: gray;
+}
+
+.btn-close:hover{
+	background-color: gray;
+}
+
+.custom-control {
+	background-color: #f7f7f7;
+	color:black;
+}
+
+.custom-control:hover {
+	background-color:white;
+}
+
+.form-control:focus {
+	border-color: #ca6015;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/*.datepicker table tr td.active:active, 
+.datepicker table tr td.active.highlighted:active, 
+.datepicker table tr td.active.active, 
+.datepicker table tr td.active.highlighted.active {
+  background-color: #ca6015;
+}*/
