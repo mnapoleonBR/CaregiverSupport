@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chelsesteele/baker-ripley#readme",
   "dependencies": {
+    "awesomplete": "^1.1.2",
     "bootstrap": "^4.0.0",
     "bxslider": "^4.2.13",
     "font-awesome": "^4.7.0",

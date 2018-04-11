@@ -1,7 +1,10 @@
-from flask import Flask
+from flask import Flask, abort
 from flask import request
 import flask
-from webapp.helpers import template
+from webapp.helpers import template, createKeywordToResourceMap
+from webapp.resources_list import resourceInfoMap
+from webapp.survey_questions import questions
+import json
 import os
 import requests
 from datetime import datetime
@@ -30,32 +33,6 @@ app = Flask(__name__)
 
 app.secret_key = 'CHANGE THIS EVENTUALLY'
 
-questions = [
-    {
-        "description": "What is your favorite color?",
-        "options": [
-            {"val": "red", "text": "Red"},
-            {"val": "blue", "text": "Blue"},
-            {"val": "green", "text": "Green"}
-        ]
-    },
-    {
-        "description": "What is your favorite Japanese food?",
-        "options": [
-            {"val": "ramen", "text": "Ramen, duh."},
-            {"val": "udon", "text": "Udon!"},
-            {"val": "sukiyaki", "text": "Sukiyaki!"}
-        ]
-    },
-    {
-        "description": "Which is better, Ratty or Vdub??",
-        "options": [
-            {"val": "ratty", "text": "Ratty"},
-            {"val": "vdub", "text": "Vdub"}
-        ]
-    }
-]
-
 @app.route('/')
 def home():
     return template('index')
@@ -69,20 +46,12 @@ def calendar():
     return template('calendar')
 
 @app.route('/national-resources')
-def nationalResources():
+def national_resources():
     return template('nationalresources')
 
 @app.route('/assessment')
 def test():
     return template('survey', questions=questions)
-
-@app.route('/respite')
-def respite():
-    return template('respite')
-
-@app.route('/long-term')
-def long_term():
-    return template('long_term_care')
 
 # Send email event to BakerRipley employee for approval
 @app.route('/submitEvent', methods=['POST'])
@@ -229,3 +198,15 @@ def print_index_table():
           '    API request</a> again, you should go back to the auth flow.' +
           '</td></tr></table>')
 
+@app.route('/resource/<resource_name>')
+def resource_page(resource_name):
+    if resource_name in resourceInfoMap:
+        return template(resource_name)
+    abort(404)
+
+@app.route('/local-resources')
+def local_resources():
+    # Once the resources are settled, we shouldn't be making this function call everytime. 
+    # Just dump the results in another Python file.
+    keywordToResources = json.dumps(createKeywordToResourceMap(resourceInfoMap))
+    return template('localresources', keywordToResources=keywordToResources, resourceInfoMap=resourceInfoMap)
