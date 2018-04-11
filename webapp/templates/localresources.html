@@ -19,35 +19,30 @@ BakerRipley Local Resources Page
     <div class="searchBarContainer">
         <input class="searchBar" id="resourceSearchBar" placeholder="Examples: rest, homecare, long-term care"></input>
     </div>
+
     <div class="resourcesResultsContainer">
         <div class="resourceResults">
-            <div class="resultColumn" id="respite">
-                <div class="resultPanel">
-                    <h3>Respite</h3>
+            {% for resource_id, resource_info in resourceInfoMap.iteritems() %}
+                <div class="resultColumn" id="{{ resource_id }}">
+                    <div class="resultPanel">
+                        <h3>{{ resource_info.longer_title }}</h3>
+                        <div class="keywordTags">
+                            <!-- {% for keyword in resource_info.keywords %}
+                                <span class="keywordTag">
+                                    {{ keyword }}
+                                </span>
+                            {% endfor %} -->
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="resultColumn" id="long-term">
-                <div class="resultPanel">
-                    <h3>Long-term Care</h3>
-                </div>
-            </div>
-            <div class="resultColumn" id="stress">
-                <div class="resultPanel">
-                    <h3>Stress Management</h3>
-                </div>
-            </div>
-            <div class="resultColumn" id="dementia">
-                <div class="resultPanel">
-                    <h3>Dementia</h3>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
 
 <script>
     // make the keywordToResource dictionary available to Javascript code
-    contextVar = {{ keywordToResources | safe }}
+    keywordToResources = {{ keywordToResources | safe }}
 </script>
 
 {% endblock %}

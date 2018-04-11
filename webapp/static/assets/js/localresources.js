@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var keywordMap = contextVar // this is set in the template
+  // keywordToResources map is set in the template
 
   // need to hold onto the resource references since they will be detached from DOM
   var $allResources = $(".resultColumn");
@@ -9,7 +9,7 @@ $(document).ready(function() {
   // Setting up the autocomplete
   var input = document.getElementById("resourceSearchBar");
   new Awesomplete(input, {
-    list: Object.keys(keywordMap),
+    list: Object.keys(keywordToResources),
     autoFirst: true,
     minChars: 1,
     filter: Awesomplete.FILTER_STARTSWITH,
@@ -22,7 +22,7 @@ $(document).ready(function() {
   });
 
   function showRelevantResource(selectedKeyword) {
-    var relevantIds = keywordMap[selectedKeyword];
+    var relevantIds = keywordToResources[selectedKeyword];
     var $relevantResources = $(); 
     relevantIds.forEach(function(id) {
       var $resource = $allResources.filter("#" + id)
@@ -44,5 +44,12 @@ $(document).ready(function() {
   $(".resultPanel").click(function(e) {
     resourceName = e.target.parentNode.id;
     window.location.href = "/resource/" + resourceName;
+  });
+
+  // visual effects
+  $(".resultPanel").hover(function() {
+    $(this).find("h3").addClass("orangeText")
+  }, function() {
+    $(this).find("h3").removeClass("orangeText")
   });
 });

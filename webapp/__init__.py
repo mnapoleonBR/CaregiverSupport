@@ -1,6 +1,6 @@
 from flask import Flask, abort
 from webapp.helpers import template, createKeywordToResourceMap
-from webapp.resources_list import resourceToKeywords
+from webapp.resources_list import resourceInfoMap
 from webapp.survey_questions import questions
 import json
 
@@ -28,7 +28,7 @@ def test():
 
 @app.route('/resource/<resource_name>')
 def resource_page(resource_name):
-    if resource_name in resourceToKeywords:
+    if resource_name in resourceInfoMap:
         return template(resource_name)
     abort(404)
 
@@ -36,5 +36,5 @@ def resource_page(resource_name):
 def local_resources():
     # Once the resources are settled, we shouldn't be making this function call everytime. 
     # Just dump the results in another Python file.
-    keywordToResources = json.dumps(createKeywordToResourceMap(resourceToKeywords))
-    return template('localresources', keywordToResources=keywordToResources)
+    keywordToResources = json.dumps(createKeywordToResourceMap(resourceInfoMap))
+    return template('localresources', keywordToResources=keywordToResources, resourceInfoMap=resourceInfoMap)

@@ -14,9 +14,9 @@ def template(filename, **kwargs):
 def env_is_dev():
     return os.environ.get('PROD') != "true"
 
-def createKeywordToResourceMap(resourceToKeywords):
+def createKeywordToResourceMap(resourceInfo):
     keywordToResources = defaultdict(list)
-    for resource_name, resource_object in resourceToKeywords.items():
+    for resource_name, resource_object in resourceInfo.items():
         for keyword in resource_object["keywords"]:
             keywordToResources[keyword].append(resource_name)
     return keywordToResources
