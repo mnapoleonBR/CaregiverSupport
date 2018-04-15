@@ -18,6 +18,8 @@ BakerRipley Calendar of Events
 {% set title = "Event Calendar" %}
 {% set description = "Find events happening in your local community." %}
 {% include 'header.html' %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <div class="container-fluid">
 	<div class="row" id="video">
@@ -31,7 +33,7 @@ BakerRipley Calendar of Events
 		<div class="col-md-8">
 			<div id='calendar'></div>
 		</div>
-		<div class="col-md-4" id="eventCol">
+		<div class="col-md-4 hidden-md" id="eventCol">
 			<div id='event-info'>
 				<div id='title'> </div>
 				<div id='dateTime'></div>
