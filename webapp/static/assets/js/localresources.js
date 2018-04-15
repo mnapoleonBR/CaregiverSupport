@@ -41,11 +41,6 @@ $(document).ready(function() {
     }
   });
 
-  $(".resultPanel").click(function(e) {
-    resourceName = e.target.parentNode.id;
-    window.location.href = "/resource/" + resourceName;
-  });
-
   // visual effects
   $(".resultPanel").hover(function() {
     $(this).find("h3").addClass("orangeText")

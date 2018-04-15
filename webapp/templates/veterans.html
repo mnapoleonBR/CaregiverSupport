@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Veterans Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Veterans’ Resources" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Veterans are eligible for a variety of benefits and services that can assist you in caring for them. Below are a few resources that may help you access and use these benefits.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h1>What help is available for caregivers of veterans?</h1>
+    <p>
+         Navigating veterans’ benefits can be difficult; however, they can be extremely beneficial assisting you in managing care. The Family Caregiver Alliance has a helpful <a href="https://www.caregiver.org/faq-caregiving-veteran">Frequently Asked Questions</a> document that can answer many of your questions about accessing these benefits.
+    </p>
+    <h1>Getting Connected</h1>
+    <p>
+        <strong>
+            How to Get Connected to the Veterans Affairs Health Care System:
+        </strong>
+        The VA Health Care System encourages all Veterans to enroll in the system. The <a href="https://www.houston.va.gov/patients/eligibility.asp">Become a Patient section</a> on the VA’s website, provides an overview of eligibility criteria, minimum duty requirements and contact information.
+    </p>
+    <p>
+        <strong>
+            How to Get Connected to Caregiver Support Services:
+        </strong>
+        The Veterans Affairs has additional services for caregivers. Contact the <a href="https://www.caregiver.va.gov/">Veteran’s Line</a> by calling (855) 260-3274.
+    </p>
+    <p>
+        <strong>
+            How to Get Connected to Benefits:
+        </strong>
+        Many counties have a Veterans Services Office to assist veterans and their families access benefits and help in obtaining important documentation needed to apply for benefits. Below are the offices for identified counties:
+        <ul>
+            <li><a href="http://www.vso.hctx.net/">Harris County Veterans Services Office</a></li> 
+            <li><a href="https://www.fortbendcountytx.gov/government/departments/administration-of-justice/commissioners-court/county-judge/veteran-service-office">Fort Bend County Veterans Services Office</a></li>
+            <li><a href="http://brazoriacountytx.gov/departments/veterans-service">Brazoria County Veterans Services Office</a></li>
+            <li><a href="http://www.mcvsc.org/">Montgomery County Veterans Services Office</a></li> 
+            <li><a href="http://www.co.chambers.tx.us/default.aspx?name=veterans">Chambers County Veterans Services Office</a></li>
+        </ul>
+    </p>
+</div>
+
+
+{% endblock %}

@@ -62,4 +62,26 @@ body {
   flex-direction: column;
   text-align: center;
   cursor: pointer;
+  padding: 5px;
+}
+
+.keywordTags {
+  margin: 0px 10px;
+}
+
+.keywordTag {
+  color: #fff;
+  background-color: #337ab7;
+  border-radius: 4px;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  display: inline-block;
+}
+
+
+
+
+
+a {
+  text-decoration: none !important;
 }

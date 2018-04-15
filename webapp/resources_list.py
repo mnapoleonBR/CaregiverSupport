@@ -8,11 +8,19 @@ resourceInfoMap = {
         'longer_title': 'Long-term Care'
     },
     'stress': {
-        'keywords': [],
+        'keywords': ['respite', 'stress', 'burnout', 'classes', 'self-care', 'workshops', 'seminars', 'overwhelmed'],
         'longer_title': 'Stress Management'
     },
     'dementia': {
-        'keywords': [],
+        'keywords': ['memory loss', 'forgetful', 'dementia', 'alzheimer''s', 'diagnosis', 'support groups', 'early-stage', 'cognitive impairment'],
         'longer_title': 'Dementia'
+    },
+    'social-engagement': {
+        'keywords': ['activities', 'engagement', 'socialization', 'exercise', 'congregate meal programs', 'fitness', 'social', 'lunch'],
+        'longer_title': 'Social Engagement and Connection'
+    },
+    'veterans': {
+        'keywords': ['VA', 'veteran services', 'VA benefits', 'aid and attendance', 'vet', 'veterans'],
+        'longer_title': 'Veterans'' Resources'
     }
 }

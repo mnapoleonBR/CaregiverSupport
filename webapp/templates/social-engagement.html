@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Social Engagement Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Social Engagement and Connection" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Research has shown that social engagement and connection can have positive impacts on the health and well-being of older adults. The resources below detail the resources available in Houston.
+    </p>
+</div>
+<div class="resource-content-container">
+    <h1>What is social engagement?</h1>
+    <p>
+         Social engagement is the opportunity for individuals to connect with other people, sometime in one-on-one interactions and sometimes in group settings. Houston has a variety of options for older adults to connect with others. 
+    </p>
+    <h1>What social engagement options are available in Houston?</h1>
+    <p>
+        <strong>
+            Senior Centers
+        </strong>
+        are group settings where older adults can meet other people, participate in a variety of programming such as exercise or games, and eat lunch together. <a href="https://www.bakerripley.org/services#senior_center">BakerRipley offers Senior Centers</a> throughout Houston. You can also search for a senior center in your area by contacting your local Parks and Recreation department as well as contacting your County Precinct. 
+    </p>
+    <p>
+        <strong>
+            Senior Activity Programs
+        </strong>
+        are available through a variety of organizations and offersingle class or event opportunities to connect with others. The <a href="https://www.ymcahouston.org/programs/active-older-adults">YMCA Active Older Adults programs</a> accommodate a wide variety of interests and functional abilities for adults 55 and over.
+    </p>
+        <strong>
+            Volunteering
+        </strong>
+        is a great way to connect with other older adults. To find out more about opportunities for older adults to volunteer, please contact the BakerRipley Volunteer Services program at (713) 685-6577.
+    </p>
+    <h1>How do I get connected to social engagement programs for my loved one with dementia?</h1>
+    <p>
+        <strong>
+            The Alzheimer’s Association
+        </strong>
+       provides <a href="https://www.alz.org/texas/in_my_community_16084.asp">Early Stage Programming</a> for individuals in the beginning stages of Alzheimer’s disease.  The programming ranges from education workshops to creative activities. 
+    </p>
+    <p>
+        <strong>
+            BakerRipley Adult Day Center
+        </strong>
+        provides socialization and engagement for individuals with dementia.  Click here to learn more about eligibility requirements and scheduling a tour.
+    </p>
+        <p>
+        <strong>
+            CarePartners
+        </strong>
+        provides free volunteer run socialization activities called Gathering Places for individuals with dementia throughout the Houston Metro Area.  The hours and days offered vary by location. Click <a href="http://www.interfaithcarepartners.org/index.php/page/c/persons-with-dementia/">here</a> to learn more about the criteria to attend a Gathering Place.
+    </p>
+</div>
+
+
+{% endblock %}

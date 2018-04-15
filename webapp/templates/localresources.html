@@ -24,16 +24,18 @@ BakerRipley Local Resources Page
         <div class="resourceResults">
             {% for resource_id, resource_info in resourceInfoMap.iteritems() %}
                 <div class="resultColumn" id="{{ resource_id }}">
-                    <div class="resultPanel">
-                        <h3>{{ resource_info.longer_title }}</h3>
-                        <div class="keywordTags">
-                            <!-- {% for keyword in resource_info.keywords %}
-                                <span class="keywordTag">
-                                    {{ keyword }}
-                                </span>
-                            {% endfor %} -->
+                    <a href="/resource/{{ resource_id }}">
+                        <div class="resultPanel">
+                            <h3>{{ resource_info.longer_title }}</h3>
+                            <div class="keywordTags">
+                                <!-- {% for keyword in resource_info.keywords[:5] %}
+                                    <span class="keywordTag">
+                                        {{ keyword }}
+                                    </span>
+                                {% endfor %} -->
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             {% endfor %}
         </div>
