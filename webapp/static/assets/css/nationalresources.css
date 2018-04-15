@@ -1,5 +1,10 @@
+@font-face {
+	font-family: 'Rajdhani-Regular';
+	src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
+}
+
 body {
-	font-family: 'Roboto Condensed', sans-serif !important;
+	font-family: 'Rajdhani-Regular';
 }
 
 .row {
@@ -37,15 +42,14 @@ body {
 }
 
 .nounderline h2{	
-	font-family: 'Roboto Condensed', sans-serif !important;
-	font-weight: 600;
+	font-weight: 800;
 	font-size: 28pt;
 }
 
 .nounderline p{	
-	font-family: 'Lato', sans-serif;
-	font-weight: 100;
-	font-size: 15pt;
+/*	font-family: 'Lato', sans-serif;
+*/	font-weight: 350;
+	font-size: 15.5pt;
 	font-style: italic;
 	color: #fafafa;
 }
