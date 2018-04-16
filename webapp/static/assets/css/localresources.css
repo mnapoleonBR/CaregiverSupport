@@ -17,12 +17,12 @@ body {
   align-items: center;
 }
 
-.awesomplete {
+ul.tagit {
   width: 50%;
 }
 
 .searchBar {
-  width: 100%;
+  width: 50%;
   padding: 5px;
   outline: none;
   border: 1px solid #aaaaaac7;
@@ -48,16 +48,20 @@ body {
   color: #CA602E;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 .resultPanel {
   background: white;
   margin: 15px;
   min-height: 300px;
   border-radius: 8px;
-  /*color: #CA602E;*/
   color: #696969;
+
   /* This stuff is for centering the text vertically */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
   flex-direction: column;
   text-align: center;
@@ -65,8 +69,9 @@ body {
   padding: 5px;
 }
 
-/*.keywordTags {
+.keywordTags {
   margin: 0px 10px;
+  /*margin-top: 30px;*/
 }
 
 .keywordTag {
@@ -76,7 +81,7 @@ body {
   padding: 5px 5px;
   margin: 5px 5px;
   display: inline-block;
-}*/
+}
 
 a {
   text-decoration: none !important;

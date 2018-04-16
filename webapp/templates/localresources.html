@@ -28,11 +28,9 @@ BakerRipley Local Resources Page
                         <div class="resultPanel">
                             <h3>{{ resource_info.longer_title }}</h3>
                             <div class="keywordTags">
-                                <!-- {% for keyword in resource_info.keywords[:5] %}
-                                    <span class="keywordTag">
-                                        {{ keyword }}
-                                    </span>
-                                {% endfor %} -->
+                                {% for keyword in resource_info.keywords[:5] %}
+                                    <span class="keywordTag">{{ keyword }}</span>
+                                {% endfor %}
                             </div>
                         </div>
                     </a>
