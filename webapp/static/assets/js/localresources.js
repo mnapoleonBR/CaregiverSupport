@@ -5,8 +5,8 @@ $(document).ready(function() {
   // need to hold onto the resource references since they will be detached from DOM
   var $allResources = $(".resultColumn");
   var $resourcesContainer = $(".resourceResults");
-
   var $autocomplete = $('#resourceSearchBar');
+  var placeholderText = 'Examples: stress, respite, memory loss, etc.'
 
   $autocomplete.tagit({
     availableTags: Object.keys(keywordToResources),
@@ -17,17 +17,24 @@ $(document).ready(function() {
         results: function() {}
       },
     },
+    placeholderText: placeholderText,
     beforeTagAdded: function(event, ui) {
       if (!(ui.tagLabel in keywordToResources)) {
         return false;
       }
     },
     afterTagAdded: function(event, ui) {
+      var allTags = $autocomplete.tagit("assignedTags")
       showRelevantResources($autocomplete.tagit("assignedTags"));
+
+      if (allTags.length == 1) {
+        $("input.ui-autocomplete-input").removeAttr("placeholder");
+      }
     },
     afterTagRemoved: function(event, ui) {
       var remainingTags = $autocomplete.tagit("assignedTags");
       if (remainingTags.length === 0) {
+        $(".tagit-new input").attr("placeholder", placeholderText);
         showAllResources();
       } else {
         showRelevantResources($autocomplete.tagit("assignedTags"));

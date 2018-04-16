@@ -80,6 +80,14 @@ h3 {
   display: inline-block;
 }
 
+li.tagit-new:first-child { width: 100%; }
+li.tagit-new:first-child input { width: 100%; }
+
+ul.tagit li:not(:first-child) ::-webkit-input-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::-moz-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::-ms-input-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::placeholder {opacity: 0;}
+
 a {
   text-decoration: none !important;
 }
