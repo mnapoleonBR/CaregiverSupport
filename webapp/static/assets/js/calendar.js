@@ -22,7 +22,14 @@ $(document).ready(function() {
 
 		eventMouseover: function(date, jsEvent, view) {
 		mouseOverFill(date)
-	}
+		},
+
+		eventClick: function(event) {
+		    if (event.url) {
+		      window.open(event.url);
+		      return false;
+		    }
+  		}
 })
 
 	$('#eventForm').submit(function(e) {

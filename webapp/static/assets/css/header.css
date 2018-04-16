@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Casual Hardcore';
+  src: url(/static/assets/fonts/Casual-Hardcore.otf);
+}
+
+@font-face {
+  font-family: 'Rajdhani-Regular';
+  src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
+}
+
+body {
+/*  font-family: 'Casual Hardcore';
+*/  font-family: 'Rajdhani-Regular';
+}
+
 .container {
   position: relative;
   text-align: center
@@ -32,19 +47,19 @@
 }
 
 .jumbotron h1 {
-  text-transform: uppercase;
-  font-size: 30pt;
-  font-weight: bolder !important;
-  font-family: 'Roboto Condensed', sans-serif !important;
+  /*text-transform: uppercase;*/
+  font-size: 66pt;
+  font-weight: 100 !important;
+  font-family: 'Casual Hardcore', sans-serif !important;
 }
 
 .jumbotron p {
-  font-family: 'Lato', sans-serif;
-  font-size: 16pt;
-  font-style: normal;
-  font-weight: 100;
+  font-family: 'Rajdhani-Regular', sans-serif;
+  font-size: 19pt;
+  font-style: italic;
+  font-weight: 400;
   color:white;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 .top-bar, .middle-bar, .bottom-bar {
