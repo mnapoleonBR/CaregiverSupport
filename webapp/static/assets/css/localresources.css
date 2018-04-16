@@ -53,7 +53,6 @@ body {
   margin: 15px;
   min-height: 300px;
   border-radius: 8px;
-  /*color: #CA602E;*/
   color: #696969;
   /* This stuff is for centering the text vertically */
   display: flex;
@@ -65,8 +64,9 @@ body {
   padding: 5px;
 }
 
-/*.keywordTags {
+.keywordTags {
   margin: 0px 10px;
+  margin-top: 30px;
 }
 
 .keywordTag {
@@ -76,7 +76,7 @@ body {
   padding: 5px 5px;
   margin: 5px 5px;
   display: inline-block;
-}*/
+}
 
 a {
   text-decoration: none !important;
