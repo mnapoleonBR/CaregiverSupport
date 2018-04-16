@@ -15,6 +15,7 @@ import google_auth_oauthlib.flow
 import googleapiclient.discovery
 
 import emailUtils
+import oauthUtils
 
 # This variable specifies the name of a file that contains the OAuth 2.0
 # information for this application, including its client_id and client_secret.
@@ -65,8 +66,6 @@ def local_resources():
     # Just dump the results in another Python file.
     keywordToResources = json.dumps(createKeywordToResourceMap(resourceInfoMap))
     return template('localresources', keywordToResources=keywordToResources, resourceInfoMap=resourceInfoMap)
-
-
 
 
 # Send email event to BakerRipley employee for approval
@@ -125,12 +124,12 @@ def createEvent():
 
     event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
 
-    print event
+    # print event
 
     # Save credentials back to session in case access token was refreshed.
     # ACTION ITEM: In a production app, you likely want to save these
     #              credentials in a persistent database instead.
-    flask.session['credentials'] = credentials_to_dict(credentials)
+    flask.session['credentials'] = oauthUtils.credentials_to_dict(credentials)
 
     flask.session.pop('event-name')
     flask.session.pop('event-location')
@@ -138,8 +137,7 @@ def createEvent():
     flask.session.pop('start-date')
     flask.session.pop('end-date')
 
-    return 'success'
-
+    return template('success')
 
 @app.route('/authorize')
 def authorize():
@@ -180,36 +178,7 @@ def oauth2callback():
   # ACTION ITEM: In a production app, you likely want to save these
   #              credentials in a persistent database instead.
   credentials = flow.credentials
-  flask.session['credentials'] = credentials_to_dict(credentials)
+  flask.session['credentials'] = oauthUtils.credentials_to_dict(credentials)
 
   return flask.redirect(flask.url_for('createEvent'), code=307)
 
-
-def credentials_to_dict(credentials):
-  return {'token': credentials.token,
-          'refresh_token': credentials.refresh_token,
-          'token_uri': credentials.token_uri,
-          'client_id': credentials.client_id,
-          'client_secret': credentials.client_secret,
-          'scopes': credentials.scopes}
-
-def print_index_table():
-  return ('<table>' +
-          '<tr><td><a href="/test">Test an API request</a></td>' +
-          '<td>Submit an API request and see a formatted JSON response. ' +
-          '    Go through the authorization flow if there are no stored ' +
-          '    credentials for the user.</td></tr>' +
-          '<tr><td><a href="/authorize">Test the auth flow directly</a></td>' +
-          '<td>Go directly to the authorization flow. If there are stored ' +
-          '    credentials, you still might not be prompted to reauthorize ' +
-          '    the application.</td></tr>' +
-          '<tr><td><a href="/revoke">Revoke current credentials</a></td>' +
-          '<td>Revoke the access token associated with the current user ' +
-          '    session. After revoking credentials, if you go to the test ' +
-          '    page, you should see an <code>invalid_grant</code> error.' +
-          '</td></tr>' +
-          '<tr><td><a href="/clear">Clear Flask session credentials</a></td>' +
-          '<td>Clear the access token currently stored in the user session. ' +
-          '    After clearing the token, if you <a href="/test">test the ' +
-          '    API request</a> again, you should go back to the auth flow.' +
-          '</td></tr></table>')
