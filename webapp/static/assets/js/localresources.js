@@ -8,7 +8,7 @@ $(document).ready(function() {
 
   // Setting up the autocomplete
   var input = document.getElementById("resourceSearchBar");
-  new Awesomplete(input, {
+  var autocomplete = new Awesomplete(input, {
     list: Object.keys(keywordToResources),
     autoFirst: true,
     minChars: 1,
@@ -39,6 +39,15 @@ $(document).ready(function() {
       $allResources.detach();
       $allResources.appendTo($resourcesContainer);
     }
+  });
+
+  // tag clicks
+  $(".keywordTag").click(function(e) {
+    var selectedTag = $(this).text();
+    $("#resourceSearchBar").val(selectedTag);
+    autocomplete.evaluate();
+    autocomplete.select();
+    e.preventDefault();
   });
 
   // visual effects

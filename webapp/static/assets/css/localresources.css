@@ -48,15 +48,20 @@ body {
   color: #CA602E;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 .resultPanel {
   background: white;
   margin: 15px;
   min-height: 300px;
   border-radius: 8px;
   color: #696969;
+
   /* This stuff is for centering the text vertically */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
   flex-direction: column;
   text-align: center;
@@ -66,7 +71,7 @@ body {
 
 .keywordTags {
   margin: 0px 10px;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
 }
 
 .keywordTag {
