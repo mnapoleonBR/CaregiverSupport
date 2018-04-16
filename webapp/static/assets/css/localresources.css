@@ -75,11 +75,8 @@ h3 {
 }
 
 .keywordTag {
-  color: #fff;
-  background-color: #337ab7;
-  border-radius: 4px;
-  padding: 5px 5px;
-  margin: 5px 5px;
+  padding: 5px 5px !important;
+  margin: 5px 5px !important;
   display: inline-block;
 }
 

@@ -10,7 +10,13 @@ $(document).ready(function() {
 
   $autocomplete.tagit({
     availableTags: Object.keys(keywordToResources),
-    autocomplete: {autoFocus: true},
+    autocomplete: { 
+      autoFocus: true, 
+      messages: {
+        noResults: '',
+        results: function() {}
+      },
+    },
     beforeTagAdded: function(event, ui) {
       if (!(ui.tagLabel in keywordToResources)) {
         return false;
