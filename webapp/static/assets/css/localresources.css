@@ -71,18 +71,25 @@ h3 {
 
 .keywordTags {
   margin: 0px 10px;
-  /*margin-top: 30px;*/
 }
 
 .keywordTag {
-  color: #fff;
-  background-color: #337ab7;
-  border-radius: 4px;
-  padding: 5px 5px;
-  margin: 5px 5px;
+  padding: 5px 5px !important;
+  margin: 5px 5px !important;
   display: inline-block;
 }
+
+li.tagit-new:first-child { width: 100%; }
+li.tagit-new:first-child input { width: 100%; }
+
+ul.tagit li:not(:first-child) ::-webkit-input-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::-moz-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::-ms-input-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::placeholder {opacity: 0;}
 
 a {
   text-decoration: none !important;
 }
+
+/* Accessibility fix */
+.ui-helper-hidden-accessible { position: absolute; left: -999em; }
