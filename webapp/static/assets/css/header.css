@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
   font-family: 'Casual Hardcore';
   src: url(/static/assets/fonts/Casual-Hardcore.otf);
 }
@@ -6,11 +6,20 @@
 @font-face {
   font-family: 'Rajdhani-Regular';
   src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
+}*/
+
+@font-face {
+  font-family: 'Trade Gothic Bold Condensed';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Trade Gothic Light';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
 }
 
 body {
-/*  font-family: 'Casual Hardcore';
-*/  font-family: 'Rajdhani-Regular';
+  font-family: 'Trade Gothic Bold Condensed';
 }
 
 .container {
@@ -47,17 +56,18 @@ body {
 }
 
 .jumbotron h1 {
-  /*text-transform: uppercase;*/
-  font-size: 66pt;
-  font-weight: 100 !important;
-  font-family: 'Casual Hardcore', sans-serif !important;
+  text-transform: uppercase;
+  font-size: 44pt;
+  font-weight: 300 !important;
+  font-family: 'Trade Gothic Bold Condensed', sans-serif !important;
+
 }
 
 .jumbotron p {
-  font-family: 'Rajdhani-Regular', sans-serif;
+  font-family: 'Trade Gothic Light', sans-serif;
   font-size: 19pt;
   font-style: italic;
-  font-weight: 400;
+  font-weight: 200;
   color:white;
   margin-top: 0px;
 }

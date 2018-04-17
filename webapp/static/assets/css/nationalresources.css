@@ -1,10 +1,15 @@
 @font-face {
-	font-family: 'Rajdhani-Regular';
-	src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
+  font-family: 'Trade Gothic Bold Condensed';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Trade Gothic Light';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
 }
 
 body {
-	font-family: 'Rajdhani-Regular';
+	font-family: 'Trade Gothic Bold Condensed';
 }
 
 .row {
@@ -47,11 +52,26 @@ body {
 }
 
 .nounderline p{	
-/*	font-family: 'Lato', sans-serif;
-*/	font-weight: 350;
+	font-family: 'Trade Gothic Light', sans-serif;
+	font-weight: 350;
 	font-size: 15.5pt;
 	font-style: italic;
 	color: #fafafa;
+}
+
+.jumbotron {
+  position: relative;
+  color: white;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+    /* bottom, image */
+    url("../../img/good.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 20%;
 }
 
 

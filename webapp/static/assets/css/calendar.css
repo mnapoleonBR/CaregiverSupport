@@ -1,11 +1,26 @@
-@font-face {
+/*@font-face {
 	font-family: 'Rajdhani-Regular';
 	src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
+}*/
+
+/*body {
+	font-family: 'Rajdhani-Regular';
+}*/
+
+@font-face {
+  font-family: 'Trade Gothic Bold Condensed';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Trade Gothic Light';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
 }
 
 body {
-	font-family: 'Rajdhani-Regular';
+	font-family: 'Trade Gothic Light';
 }
+
 
 #calendarRow {
 	padding-top: 100px;
@@ -20,8 +35,8 @@ body {
 
 #calendar {
 	height:100%;
-/*	font-family: 'Lato', sans-serif;
-*/}
+	font-family: 'Trade Gothic Light', sans-serif;
+}
 
 #eventCol {
 	border: 0.75px solid black;
@@ -30,13 +45,13 @@ body {
 }
 
 #event-info {
-	/*font-family: 'Roboto Condensed', sans-serif;*/
+	font-family: 'Trade Gothic Light', sans-serif;
 }
 
 #title {
 	padding-top: 10px;
 	font-size: 28pt;
-	/*font-family: 'Roboto Condensed', sans-serif;*/
+	font-family: 'Trade Gothic Bold Condensed', sans-serif;
 }
 
 #title a {
@@ -54,6 +69,7 @@ body {
 	margin-top: -4px;
 	font-size: 12pt;
 	color: #6b6b6b;
+	font-family: 'Trade Gothic Bold Condensed', sans-serif;
 
 }
 
@@ -61,6 +77,7 @@ body {
 	margin-top: -18px;
 	font-size: 12pt;
 	color: #6b6b6b;
+	font-family: 'Trade Gothic Bold Condensed', sans-serif;
 }
 
 #description {
@@ -131,4 +148,19 @@ body {
 
 .fc-title{
     font-size: 1.1em;
+}
+
+.jumbotron {
+  position: relative;
+  color: white;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+    /* bottom, image */
+    url("../../img/eg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 15%;
 }
