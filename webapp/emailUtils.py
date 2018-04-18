@@ -8,6 +8,7 @@ from email.mime.text import MIMEText
 
 def send_email(msg):
   sender = 'jlee671@yahoo.com'
+  #THIS IS LITERALLY MY PASSWORD IN PLAIN TEXT THIS IS SO PROBLEMATIC LOL
   password = 'C0wsg0m00yahoo'
   receiver = 'jared_lee@brown.edu'
   receivers = ['jared_lee@brown.edu']
@@ -50,9 +51,9 @@ def createEventEmail(request):
 
   link = flask.url_for('createEvent', _external=True)
   for i in range(0, 25):
-    print(link + '?' + urllib.urlencode(request.form))
+    print(link + '?' + urllib.parse.urlencode(request.form))
 
-  link = link + '?' + urllib.urlencode(request.form)
+  link = link + '?' + urllib.parse.urlencode(request.form)
   params = {'start'}
   body =  ('Name: ' + name + '<br>' + 'Email: ' + email + '<br>' +
           'Event Name: ' + eventName + '<br>' +
