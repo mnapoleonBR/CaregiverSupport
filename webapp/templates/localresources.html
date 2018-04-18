@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Local Resources Page
+{% endblock %}
+
+{% block css %}
+    <link href={{ url_for('static', filename='node_modules/tag-it/css/jquery.tagit.css') }} rel="stylesheet" type="text/css">
+    <link href={{ url_for('static', filename='node_modules/tag-it/css/tagit.ui-zendesk.css') }} rel="stylesheet" type="text/css">
+    {{ super() }}
+{% endblock %}
+
+
+{% block content %}
+
+{% set title = "Local Caregiver Resources" %}
+{% include 'header.html' %}
+
+<div class="content">
+    <div class="searchBarContainer">
+        <input class="searchBar" id="resourceSearchBar"></input>
+    </div>
+
+    <div class="resourcesResultsContainer">
+        <div class="resourceResults">
+            {% for resource_id, resource_info in resourceInfoMap.iteritems() %}
+                <div class="resultColumn" id="{{ resource_id }}">
+                    <a href="/resource/{{ resource_id }}">
+                        <div class="resultPanel">
+                            <h3>{{ resource_info.longer_title }}</h3>
+                            <div class="keywordTags">
+                                {% for keyword in resource_info.keywords[:5] %}
+                                    <span class="keywordTag btn btn-primary">{{ keyword }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script>
+    // make the keywordToResource dictionary available to Javascript code
+    keywordToResources = {{ keywordToResources | safe }}
+</script>
+
+{% endblock %}
+
+{% block js %}
+    <script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/jquery-ui-dist/jquery-ui.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/tag-it/js/tag-it.min.js') }}></script>
+    {{ super() }}
+{% endblock %}

@@ -1,5 +1,15 @@
+@font-face {
+  font-family: 'Trade Gothic Bold Condensed';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Trade Gothic Light';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
+}
+
 body {
-	font-family: 'Roboto Condensed', sans-serif !important;
+	font-family: 'Trade Gothic Bold Condensed';
 }
 
 .row {
@@ -37,17 +47,31 @@ body {
 }
 
 .nounderline h2{	
-	font-family: 'Roboto Condensed', sans-serif !important;
-	font-weight: 600;
-	font-size: 28pt;
+	font-weight: 800;
+	font-size: 30pt;
 }
 
 .nounderline p{	
-	font-family: 'Lato', sans-serif;
-	font-weight: 100;
-	font-size: 15pt;
+	font-family: 'Trade Gothic Light', sans-serif;
+	font-weight: 350;
+	font-size: 15.5pt;
 	font-style: italic;
 	color: #fafafa;
+}
+
+.jumbotron {
+  position: relative;
+  color: white;
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),
+    /* bottom, image */
+    url("../../img/good.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0% 20%;
 }
 
 

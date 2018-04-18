@@ -17,13 +17,17 @@
   },
   "homepage": "https://github.com/chelsesteele/baker-ripley#readme",
   "dependencies": {
+    "awesomplete": "^1.1.2",
     "bootstrap": "^4.0.0",
     "bxslider": "^4.2.13",
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.8.2",
     "jquery": "2.1.1",
+    "jquery-ui-dist": "^1.12.1",
     "jquery.easing": "^1.4.1",
     "moment": "^2.20.1",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.12.9",
+    "tag-it": "^2.0.0",
+    "tempusdominus-bootstrap-4": "^5.0.0-alpha18"
   }
 }
