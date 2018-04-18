@@ -58,3 +58,7 @@ def respite():
 def long_term():
     return template('long_term_care')
 
+@app.route('/connections')
+def connections():
+    return template('connections')
+

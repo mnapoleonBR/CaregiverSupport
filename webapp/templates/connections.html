@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Connections
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Connections" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Do you want to talk someone about caregiving? There are a variety of opportunities to connect with others in the Houston area, from other caregivers to professionals. Here, you can pick the option that is best for you.
+    </p>
+</div>
+
+<!-- TODO: hide this on page load --> 
+<div id="contactForm">
+
+  <h1>Contact a Caregiver Specialist</h1> <br>
+  <small>BakerRipley employs Caregiver Support Specialists, licensed social workers, who can help you problem solve, discuss care options, and provide referrals to community services. If you would like one of our specialists to contact you, please complete the form below. Questions? Please call our CARELine at 713-685-6577
+</small>
+  
+  <form id ="form" action="#">
+    <input placeholder="Name" type="text" required />
+    <input placeholder="Email" type="email" required />
+    <input placeholder="Email, for accuracy" type="email" required />
+    <textarea placeholder="What would you like to talk about with our specialist?"></textarea>
+    <input class="formBtn" type="submit" />
+    
+  </form>
+</div>
+
+<button id="popup" onclick="div_show()">Connect with a Caregiver Support Specialist</button>
+
+<div class="container">
+    <a href="https://www.caregiver.org/" class="nounderline">
+        <div class="row row-padding">
+            <div class="col-md-10">
+                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+                <h2>Connect with a Caregiver Support Specialist</h2>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+<div class="resource-content-container">
+    <h1>Connect with Other Houston Caregivers</h1>
+    <h2> Connecting to other people in your situation can be extremely helpful. Houston has a variety of ways to connect with others. Below are a few you can explore. </h2>
+    <p>
+        <strong> Houston Area Family Caregiver MeetUp Group  </strong>
+        Houston Area Family Caregiver MeetUp Group is an online group for caregivers who want to connect with other caregivers in a social, educational, and resource sharing capacity. Houston-area Family Caregiver Meetup Group <a href="https://www.meetup.com/houston-area-family-caregivers/"> Houston-area Family Caregiver Meetup Group</a>
+    </p>
+    <p>
+        <strong> Local Support Groups </strong>
+        Support groups provide an opportunity for caregivers to share their experiences with others in similar situations. Houston offers a variety of support groups for caregivers in certain situations. Below are a few resources in the Houston area. If you need a different type of support group, please contact our Caregiver Support Specialist or call our CARELine at 713.685.6577.
+    </p>
+    <p>
+        <strong> Common Ground: Caregiver Conversations </strong>
+        Offered by Interfaith CarePartners
+        Monthly support groups hosted by a mental health professional and former caregiver for caregivers of people with dementia or physical disabilities are held a variety of locations throughout Houston. To locate a meeting, contact Interfaith Carepartners at 713-682-5995 or <a href= "info@interfaithcarepartners.org"> email </a>. For more information, please visit their <a href="http://www.interfaithcarepartners.org/index.php/page/c/caregiver-support/"> website </a>.
+    </p>
+    <p>
+        <strong> Alzheimer’s Association Support Groups </strong>
+        The Alzheimer’s Association, Houston and Southeast Texas Chapter hosts a variety of support groups for caregivers of people with dementia. To find a full list of support groups, please contact the Alzheimer’s Association at 1.800.272.3900. For more information, please visit their <a href="https://www.alz.org/texas/"> website </a>. In partnership with the Alzheimer’s Association, BakerRipley offers a support group the 4th Monday of every month at Sheltering Arms Senior Services, 3838 Aberdeen Way, Houston, TX 77025. Free care is available for your loved one so you can attend. 
+    </p>
+    <p>
+        <strong> Other Support Groups </strong>
+        Other support groups are available throughout Houston. Many Long Term Care facilities (such as Assisted Livings) will offer support group to families of their residents and as well as other community members. Additionally, some disease specific organizations, like the American Cancer Society, will offer specific support groups. If you need help identifying a support group, please contact our Caregiver Support Specialist or call our CARELine at 713.685.6577
+    </p>
+
+
+    <h1>Other Ways to Connect</h1>
+    <p>
+        The Texas Health and Human Services Long-term Care Provider Search tool can be used to locate long-term care facilities near you. The search engine can be filtered by county and the type of services needed. The tool can be accessed <a href="https://apps.hhs.texas.gov/ltcsearch/providersearch.cfm">here.</a>
+    </p>
+    <h1>How do I pay for care?</h1>
+    <h2> Sometimes it’s simply not feasible to connect with others in the Houston area. Our jobs, caregiving responsibilities and lives may present us from getting out of the house at a specific time, or leaving our loved ones alone. Here you will find different ways to connect with others from the comfort of your own home. </h2>
+    
+    <p>
+        <strong> Caregivers Teleconnection </strong>
+       Caregiver Teleconnection is a telephonic support group focused on learning and connecting with others.  Each session has a learning topic and sessions are available in different languages. For more information, please visit their <a href="http://caregiversos.org/caregiver-teleconnection/"> website </a>.
+    </p>
+        <p>
+        <strong> Caregiver Online - Family Caregiver Alliance's Online Caregiver Support Group </strong>
+        MORE INFO COMING filler text ... For more information, please visit their <a href="http://caregiversos.org/caregiver-teleconnection/"> website </a>.
+    </p>
+    <p>
+        <strong> AARP Caregiver Discussion Board </strong>
+       AARP offers a variety of resources for caregivers. One great way to connect with others is through their Caregiver Discussion Board. You can browse discussion topics, contribute to these discussions or start one of your own. For more information, please visit their <a href="https://community.aarp.org/t5/Caregiving/ct-p/Caregiving"> website </a>.
+    </p>
+</div>
+
+
+{% endblock %}
