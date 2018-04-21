@@ -20,16 +20,23 @@ $(document).ready(function() {
 			element.location = event.location
 		}, 
 
-		eventMouseover: function(date, jsEvent, view) {
-		mouseOverFill(date)
-		},
+		// eventMouseover: function(date, jsEvent, view) {
+		// mouseOverFill(date)
+		// },
 
 		eventClick: function(event) {
+		    // if (event.url) {
+		    //   window.open(event.url);
+		    //   return false;
+		    // }
 		    if (event.url) {
-		      window.open(event.url);
-		      return false;
+		    	console.log(event.url)
+		    	mouseOverFill(event)
+		    	return false;
 		    }
+		    
   		}
+
 })
 
 	$('#eventForm').submit(function(e) {
@@ -67,6 +74,7 @@ $(document).ready(function() {
         }
 	});
 
+	$('#linkButton').hide();
 });
 
 function cleanModal() {
@@ -82,6 +90,9 @@ function mouseOverFill(event) {
 	$('#location').empty()
 	$('#description').empty()
 	$('#dateTime').empty()
+	$('#linkButton').show()
+
+	$('#linkButton').attr("href", event.url)
 
 	$('<a href=' + event.url + '>' + event.title + '</a>').appendTo('#title')
 
