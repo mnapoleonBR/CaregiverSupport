@@ -1,7 +1,7 @@
 from flask import Flask, abort
 from flask import request
 import flask
-from webapp.helpers import template, createKeywordToResourceMap
+from webapp.helpers import template, createKeywordToResourceMap, validateResourceList
 from webapp.resources_list import resourceInfoMap
 from webapp.survey_questions import questions
 import json
@@ -75,7 +75,12 @@ def connections():
 def questionnaire_results():
     # this should be replaced by getting the results out of the session
     resource_results = ['dementia', 'veterans', 'stress']
-    return template('questionnaire-results', resources=resource_results)
+
+    # make sure all the results are valid resources
+    if not validateResourceList(resource_results, resourceInfoMap):
+        abort(500)
+
+    return template('questionnaire-results', resources=resource_results, resourceInfoMap=resourceInfoMap)
 
 
 ##################### Calendar Stuff #####################

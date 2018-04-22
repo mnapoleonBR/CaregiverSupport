@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Questionnaire Results
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/nationalresources.css') }} />
+{% endblock %}
+
+
+{% block content %}
+
+    {% set title = "Questionnaire Results" %}
+    {% set description = "Text goes here!" %}
+    {% include 'header.html' %}
+    
+    <div class="container">
+        {% for resource in resources %}
+            {% set resource_data = resourceInfoMap[resource] %}
+            <a href="https://www.caregiver.org/" class="nounderline">
+                <div class="row row-padding">
+                        <div class="col-md-10">
+                            <h2>{{ resource_data.longer_title }}</h2>
+                            <p>{{ resource_data.description }}</p>
+                        </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+{% block js %}
+    <script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
+{% endblock %}
