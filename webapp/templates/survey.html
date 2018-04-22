@@ -11,34 +11,58 @@
 
 {% block content %}
   <div class="modal-wrap">
+    {% if existing_results %}
+
     <div class="modal-header">
       <span class="is-active"></span>
-      {% for n in range(questions|length - 1) %}
-        <span></span>
-      {% endfor %}
     </div>
     <div class="modal-bodies">
-
-    {% for question in questions %}
-      <div class="modal-body {{ loop.first and 'is-showing' }}">
-        <div class="title">Step {{ loop.index }}</div>
-        <div class="description" id="question">{{ question["description"] }}</div>
-        <!-- the question_id is the id of the resource that corresponds to a "yes" answer for non-multiple questions -->
-        <div class="q_id" id="{{ question.question_id }}" style="display:none;"></div>
-        <form class="{{ question.ismultiple and 'is-multiple' }}">
-          <div>
-            {% for option in question["options"] %}
-              <label>
-                <input class="{{ question.ismultiple and 'is-multiple' }}" type="radio" value="{{ option['val'] }}"/>{{ option["text"] }}
-              </label>
-            {% endfor %}
-          </div>
-          <div class="text-center fade-in">
-            <div class="button">{{ "Submit" if loop.last else "Next" }}</div>
-          </div>
-        </form>
+      <div class="modal-body is-showing">
+        <div class="title">Assessment Results</div>
+        <div class="description">It looks like you've already filled out the assessment! We have saved resource recommendations for you to view.</div>
+        <div class="button-container">
+          <button type="button" class="btn btn-outline-primary btn-lg">
+            <a href="/questionnaire/restart" style="color:inherit; text-decoration: none">Retake Questionnaire</a>
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-lg">
+            <a href="/questionnaire-results" style="color:inherit; text-decoration: none">See Your Results</a>
+          </button>
+        </div>
       </div>
-    {% endfor %}
+    </div>
+
+
+    {% else %}
+
+      <div class="modal-header">
+        <span class="is-active"></span>
+        {% for n in range(questions|length - 1) %}
+          <span></span>
+        {% endfor %}
+      </div>
+      <div class="modal-bodies">
+      {% for question in questions %}
+        <div class="modal-body {{ loop.first and 'is-showing' }}">
+          <div class="title">Step {{ loop.index }}</div>
+          <div class="description" id="question">{{ question["description"] }}</div>
+          <!-- the question_id is the id of the resource that corresponds to a "yes" answer for non-multiple questions -->
+          <div class="q_id" id="{{ question.question_id }}" style="display:none;"></div>
+          <form class="{{ question.ismultiple and 'is-multiple' }}">
+            <div>
+              {% for option in question["options"] %}
+                <label>
+                  <input class="{{ question.ismultiple and 'is-multiple' }}" type="radio" value="{{ option['val'] }}"/>{{ option["text"] }}
+                </label>
+              {% endfor %}
+            </div>
+            <div class="text-center fade-in">
+              <div class="button">{{ "Submit" if loop.last else "Next" }}</div>
+            </div>
+          </form>
+        </div>
+      {% endfor %}
+
+    {% endif %}
     </div>
   </div>
 {% endblock %}

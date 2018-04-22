@@ -148,6 +148,12 @@ label:last-child {
   display: block;
 }
 
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .animate-out {
   -webkit-animation: out 600ms ease-in-out forwards;
           animation: out 600ms ease-in-out forwards;

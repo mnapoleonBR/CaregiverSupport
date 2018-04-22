@@ -50,10 +50,6 @@ def calendar():
 def national_resources():
     return template('nationalresources')
 
-@app.route('/assessment')
-def test():
-    return template('survey', questions=questions)
-
 @app.route('/resource/<resource_name>')
 def resource_page(resource_name):
     if resource_name in resourceInfoMap:
@@ -71,22 +67,37 @@ def local_resources():
 def connections():
     return template('connections')
 
+@app.route('/questionnaire')
+@app.route('/questionnaire/restart')
+def questionnaire():
+    received_restart_request = request.path == '/questionnaire/restart'
+    if received_restart_request and session.get('personalized_resources'):
+        session.pop('personalized_resources')
+
+    # check if there are already results stored in the session
+    stored_results = session.get('personalized_resources')
+    existing_results = stored_results and (len(stored_results) > 0)
+    return template('survey', questions=questions, existing_results=existing_results)
+
 @app.route('/questionnaire-submit', methods=['POST'])
 def questionnaire_submit():
-    relevantResourceIds = [json.loads(request.get_data())]
+    relevantResourceIds = json.loads(request.get_data())
+
+    # make sure all the results are valid resources
+    if not validateResourceList(relevantResourceIds, resourceInfoMap):
+        return json.dumps({'error_message': 'Invalid resources'}), 400
+
     session['personalized_resources'] = relevantResourceIds
 
-    return template('questionnaire-results', resources=relevantResourceIds, resourceInfoMap=resourceInfoMap)
+    return json.dumps({'redirect_link': '/questionnaire-results'})
     
 
 @app.route('/questionnaire-results')
 def questionnaire_results():
-    # this should be replaced by getting the results out of the session
-    resource_results = ['dementia', 'veterans', 'stress']
+    # resource_results = session['personalized_resources']
+    resource_results = ['veterans', 'stress']
 
-    # make sure all the results are valid resources
-    if not validateResourceList(resource_results, resourceInfoMap):
-        abort(500)
+    # TODO: figure out what to do when they have no results saved
 
     return template('questionnaire-results', resources=resource_results, resourceInfoMap=resourceInfoMap)
 

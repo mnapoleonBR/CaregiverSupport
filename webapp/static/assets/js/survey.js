@@ -38,6 +38,12 @@ function submitResourceIds(resourceIds) {
     type: "POST",
     url: '/questionnaire-submit',
     data: JSON.stringify(resourceIds),
+    success: function(response) {
+      window.location.href = JSON.parse(response).redirect_link;
+    },
+    error: function(response) {
+      console.log(JSON.parse(response.responseText));
+    }
   });
 }
 
