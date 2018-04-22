@@ -1,5 +1,5 @@
 from flask import Flask, abort
-from flask import request
+from flask import request, session
 import flask
 from webapp.helpers import template, createKeywordToResourceMap, validateResourceList
 from webapp.resources_list import resourceInfoMap
@@ -70,6 +70,14 @@ def local_resources():
 @app.route('/connections')
 def connections():
     return template('connections')
+
+@app.route('/questionnaire-submit', methods=['POST'])
+def questionnaire_submit():
+    relevantResourceIds = [json.loads(request.get_data())]
+    session['personalized_resources'] = relevantResourceIds
+
+    return template('questionnaire-results', resources=relevantResourceIds, resourceInfoMap=resourceInfoMap)
+    
 
 @app.route('/questionnaire-results')
 def questionnaire_results():

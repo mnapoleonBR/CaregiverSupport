@@ -1,4 +1,4 @@
-var answers = [];
+var selectedResourceIds = []
 //var results = {};
 
 $('.button').click(function() {
@@ -6,16 +6,40 @@ $('.button').click(function() {
       $step = $btn.parents('.modal-body'),
       stepIndex = $step.index(),
       $pag = $('.modal-header span').eq(stepIndex),
-      $input = $btn.closest('form').find('input:checked');
-    
-  answers.push($input.val() || 'none');
+      $input = $btn.closest('form').find('input:checked'),
+      isMultiselect = $btn.closest('form').hasClass('is-multiple'),
+      id = $btn.closest('.modal-body').find('.q_id').attr('id');
+
+  // if nothing was selected, get mad
+  if ($input.length === 0) {
+    alert("Please choose at least one option.");
+    return false;
+  }
+
+  // if this is a multi-select question, add all selected
+  if (isMultiselect) {
+    $input.each(function () {
+      selectedResourceIds.push($(this).val());
+    });
+  // if it is a single-select question, only add the corresponding resource_id if relevant
+  } else if ($input.val() === "yes") {
+     selectedResourceIds.push(id);
+  }
     
   if ($step.next().length > 0) {
     animateStep($step, $pag);
   } else {
-    alert(answers.join(', '));
+    submitResourceIds(selectedResourceIds);
   }
 });
+
+function submitResourceIds(resourceIds) {
+  $.ajax({
+    type: "POST",
+    url: '/questionnaire-submit',
+    data: JSON.stringify(resourceIds),
+  });
+}
 
 function animateStep($step, $pag){
   // animate the step out

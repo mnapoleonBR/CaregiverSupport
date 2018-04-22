@@ -23,8 +23,9 @@
       <div class="modal-body {{ loop.first and 'is-showing' }}">
         <div class="title">Step {{ loop.index }}</div>
         <div class="description" id="question">{{ question["description"] }}</div>
-          <div class="q_id" id="{{ question.question_id }}" display: none;></div>
-        <form>
+        <!-- the question_id is the id of the resource that corresponds to a "yes" answer for non-multiple questions -->
+        <div class="q_id" id="{{ question.question_id }}" style="display:none;"></div>
+        <form class="{{ question.ismultiple and 'is-multiple' }}">
           <div>
             {% for option in question["options"] %}
               <label>
