@@ -67,6 +67,18 @@ def local_resources():
     keywordToResources = json.dumps(createKeywordToResourceMap(resourceInfoMap))
     return template('localresources', keywordToResources=keywordToResources, resourceInfoMap=resourceInfoMap)
 
+@app.route('/connections')
+def connections():
+    return template('connections')
+
+@app.route('/questionnaire-results')
+def questionnaire_results():
+    # this should be replaced by getting the results out of the session
+    resource_results = ['dementia', 'veterans', 'stress']
+    return template('questionnaire-results', resources=resource_results)
+
+
+##################### Calendar Stuff #####################
 
 # Send email event to BakerRipley employee for approval
 @app.route('/submitEvent', methods=['POST'])
@@ -181,8 +193,4 @@ def oauth2callback():
   flask.session['credentials'] = oauthUtils.credentials_to_dict(credentials)
 
   return flask.redirect(flask.url_for('createEvent'), code=307)
-
-@app.route('/connections')
-def connections():
-    return template('connections')
 
