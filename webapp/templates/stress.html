@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Stress Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Stress Management" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        It’s no secret, being a caregiver is sometimes challenging and overwhelming.  When caring for someone else, it’s easy to put your own needs aside. The following resources contain tips for self-care, workshops that help you to cope with the stresses of caregiver and options for getting a break.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h1>Self-Care:</h1>
+    <p>
+        As a caregiver, you spend a lot of time caring for your loved one and as a result, you may forget the most important person in the equation, YOU! The AARP has identified <a href="https://www.aarp.org/relationships/caregiving/info-06-2010/crc-10-caregiver-stress-managment-tips.html"> some tips for practicing self-care</a>.
+    </p>
+    <h1>Learning How to Take Care of Yourself</h1>
+    <p>
+        Understanding what stress is the first step. However, if you would like more resources on how to apply self-care techniques BakerRipley offers two stress management classes that provide caregivers with the tools needed to care for themselves.
+    </p>
+    <p>
+        <strong>
+            1) Powerful Tools for Caregivers
+        </strong>
+        is a 6 week program that helps family caregivers to build coping skills and learn techniques for self-care that reduce the stress of caring for an older loved one. 
+    </p>
+    <p>
+        <strong>
+            2) Stress-Busting for Family Caregivers
+        </strong>
+        is a 9 week program focused on education, support, and stress management using a holistic approach to address  the emotional, physical, and spiritual needs of caregivers.  
+    </p>
+    <p>
+        Visit our <a href="/calendar">calendar page</a> to see our full callendar of events.
+    </p>
+    <h1>Respite</h1>
+    <p>
+        Another way to manage stress is through getting a break from  your role as a caregiver.  Visit <a href="/resource/respite">our respite page</a> to learn more about the types of respite and the resources available to pay for it.
+    </p>
+</div>
+
+
+{% endblock %}

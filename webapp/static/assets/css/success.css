@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Rajdhani-Regular';
+	src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
+}
+
+body {
+	font-family: 'Rajdhani-Regular';
+	font-size: 30pt;
+}

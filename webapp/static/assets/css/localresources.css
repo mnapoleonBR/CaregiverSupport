@@ -17,12 +17,12 @@ body {
   align-items: center;
 }
 
-.awesomplete {
+ul.tagit {
   width: 50%;
 }
 
 .searchBar {
-  width: 100%;
+  width: 50%;
   padding: 5px;
   outline: none;
   border: 1px solid #aaaaaac7;
@@ -48,18 +48,48 @@ body {
   color: #CA602E;
 }
 
+h3 {
+  font-size: 2rem;
+}
+
 .resultPanel {
   background: white;
   margin: 15px;
   min-height: 300px;
   border-radius: 8px;
-  /*color: #CA602E;*/
   color: #696969;
+
   /* This stuff is for centering the text vertically */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-content: center;
   flex-direction: column;
   text-align: center;
   cursor: pointer;
+  padding: 5px;
 }
+
+.keywordTags {
+  margin: 0px 10px;
+}
+
+.keywordTag {
+  padding: 5px 5px !important;
+  margin: 5px 5px !important;
+  display: inline-block;
+}
+
+li.tagit-new:first-child { width: 100%; }
+li.tagit-new:first-child input { width: 100%; }
+
+ul.tagit li:not(:first-child) ::-webkit-input-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::-moz-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::-ms-input-placeholder {opacity: 0;}
+ul.tagit li:not(:first-child) ::placeholder {opacity: 0;}
+
+a {
+  text-decoration: none !important;
+}
+
+/* Accessibility fix */
+.ui-helper-hidden-accessible { position: absolute; left: -999em; }

@@ -5,26 +5,52 @@ $(document).ready(function() {
   // need to hold onto the resource references since they will be detached from DOM
   var $allResources = $(".resultColumn");
   var $resourcesContainer = $(".resourceResults");
+  var $autocomplete = $('#resourceSearchBar');
+  var placeholderText = 'Examples: stress, respite, memory loss, etc.'
 
-  // Setting up the autocomplete
-  var input = document.getElementById("resourceSearchBar");
-  new Awesomplete(input, {
-    list: Object.keys(keywordToResources),
-    autoFirst: true,
-    minChars: 1,
-    filter: Awesomplete.FILTER_STARTSWITH,
-  });
+  $autocomplete.tagit({
+    availableTags: Object.keys(keywordToResources),
+    autocomplete: { 
+      autoFocus: true, 
+      messages: {
+        noResults: '',
+        results: function() {}
+      },
+    },
+    placeholderText: placeholderText,
+    beforeTagAdded: function(event, ui) {
+      if (!(ui.tagLabel in keywordToResources)) {
+        return false;
+      }
+    },
+    afterTagAdded: function(event, ui) {
+      var allTags = $autocomplete.tagit("assignedTags")
+      showRelevantResources($autocomplete.tagit("assignedTags"));
 
-  Awesomplete.$.bind(input, {
-    "awesomplete-selectcomplete": function(evt) {
-      showRelevantResource(evt.text);
+      if (allTags.length == 1) {
+        $("input.ui-autocomplete-input").removeAttr("placeholder");
+      }
+    },
+    afterTagRemoved: function(event, ui) {
+      var remainingTags = $autocomplete.tagit("assignedTags");
+      if (remainingTags.length === 0) {
+        $(".tagit-new input").attr("placeholder", placeholderText);
+        showAllResources();
+      } else {
+        showRelevantResources($autocomplete.tagit("assignedTags"));
+      }
     }
   });
 
-  function showRelevantResource(selectedKeyword) {
-    var relevantIds = keywordToResources[selectedKeyword];
+  function showRelevantResources(selectedTags) {
+    var relevantResourceIds = []
+    selectedTags.forEach(function(tag) {
+      console.log(keywordToResources[tag]);
+      relevantResourceIds = relevantResourceIds.concat(keywordToResources[tag]);
+    });
+
     var $relevantResources = $(); 
-    relevantIds.forEach(function(id) {
+    relevantResourceIds.forEach(function(id) {
       var $resource = $allResources.filter("#" + id)
       $relevantResources = $relevantResources.add($resource);
     })
@@ -33,17 +59,16 @@ $(document).ready(function() {
     $relevantResources.appendTo($resourcesContainer);
   }
 
-  // when the search bar is back to empty, show all
-  $("#resourceSearchBar").on("input", function(e) {
-    if (!e.target.value) {
-      $allResources.detach();
-      $allResources.appendTo($resourcesContainer);
-    }
-  });
+  function showAllResources() {
+    $allResources.detach();
+    $allResources.appendTo($resourcesContainer);
+  }
 
-  $(".resultPanel").click(function(e) {
-    resourceName = e.target.parentNode.id;
-    window.location.href = "/resource/" + resourceName;
+  // tag clicks
+  $(".keywordTag").click(function(e) {
+    var selectedTag = $(this).text();
+    $autocomplete.tagit("createTag", selectedTag);
+    e.preventDefault();
   });
 
   // visual effects
