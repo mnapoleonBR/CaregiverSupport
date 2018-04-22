@@ -14,7 +14,7 @@ import google.oauth2.credentials
 import google_auth_oauthlib.flow
 import googleapiclient.discovery
 
-import emailUtils
+import webapp.emailUtils
 
 # This variable specifies the name of a file that contains the OAuth 2.0
 # information for this application, including its client_id and client_secret.
@@ -109,7 +109,7 @@ def createEvent():
 
     event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
 
-    print event
+    print(event)
 
     # Save credentials back to session in case access token was refreshed.
     # ACTION ITEM: In a production app, you likely want to save these

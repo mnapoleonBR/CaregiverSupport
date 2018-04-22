@@ -22,12 +22,13 @@
     {% for question in questions %}
       <div class="modal-body {{ loop.first and 'is-showing' }}">
         <div class="title">Step {{ loop.index }}</div>
-        <div class="description">{{ question["description"] }}</div>
+        <div class="description" id="question">{{ question["description"] }}</div>
+          <div class="q_id" id="{{ question.question_id }}" display: none;></div>
         <form>
           <div>
             {% for option in question["options"] %}
               <label>
-                <input type="radio" value="{{ option['val'] }}"/>{{ option["text"] }}
+                <input class="{{ question.ismultiple and 'is-multiple' }}" type="radio" value="{{ option['val'] }}"/>{{ option["text"] }}
               </label>
             {% endfor %}
           </div>
