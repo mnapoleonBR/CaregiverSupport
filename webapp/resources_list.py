@@ -12,12 +12,12 @@ resourceInfoMap = {
     'stress': {
         'keywords': ['respite', 'stress', 'burnout', 'classes', 'self-care', 'workshops', 'seminars', 'overwhelmed'],
         'longer_title': 'Stress Management',
-        'description': 'It''s no secret, being a caregiver is sometimes challenging and overwhelming.  When caring for someone else, it''s easy to put your own needs aside. The following resource contains tips for self-care, workshops that help you to cope with the stresses of caregiver and options for getting a break.'
+        'description': 'It\'s no secret, being a caregiver is sometimes challenging and overwhelming.  When caring for someone else, it\'s easy to put your own needs aside. The following resource contains tips for self-care, workshops that help you to cope with the stresses of caregiver and options for getting a break.'
     },
     'dementia': {
-        'keywords': ['memory loss', 'forgetful', 'dementia', 'alzheimer''s', 'diagnosis', 'support groups', 'early-stage', 'cognitive impairment'],
+        'keywords': ['memory loss', 'forgetful', 'dementia', 'alzheimer\'s', 'diagnosis', 'support groups', 'early-stage', 'cognitive impairment'],
         'longer_title': 'Dementia',
-        'description': 'Caring for someone with dementia can be a difficult task. We''ve designed this resource page to provide you with a some tools to help on your journey. The page contains education presentations, information on local support groups, steps to getting a diagnosis and more.'
+        'description': 'Caring for someone with dementia can be a difficult task. We\'ve designed this resource page to provide you with a some tools to help on your journey. The page contains education presentations, information on local support groups, steps to getting a diagnosis and more.'
     },
     'social-engagement': {
         'keywords': ['activities', 'engagement', 'socialization', 'exercise', 'congregate meal programs', 'fitness', 'social', 'lunch'],
@@ -26,7 +26,7 @@ resourceInfoMap = {
     },
     'veterans': {
         'keywords': ['VA', 'veteran services', 'VA benefits', 'aid and attendance', 'vet', 'veterans'],
-        'longer_title': 'Veterans'' Resources',
+        'longer_title': 'Veterans\' Resources',
         'description': 'Veterans are eligible for a variety of benefits and services that can assist you in caring for them. This page details resources that may help you access and use these benefits.'
     }
 }
