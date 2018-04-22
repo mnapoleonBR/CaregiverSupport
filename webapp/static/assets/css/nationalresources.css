@@ -9,8 +9,9 @@
 }
 
 body {
-	font-family: 'Trade Gothic Bold Condensed';
+ font-family: 'Trade Gothic Bold Condensed';
 }
+
 
 .row {
 	margin-top: 15px;
@@ -28,8 +29,8 @@ body {
 
 @media only screen and (max-width: 1500px) and (min-width: 800px){
 	.row-padding {
-		margin-left: 10%;
-		margin-right: 10%;
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 }
 
@@ -58,20 +59,3 @@ body {
 	font-style: italic;
 	color: #fafafa;
 }
-
-.jumbotron {
-  position: relative;
-  color: white;
-  background: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.4), 
-      rgba(0, 0, 0, 0.4)
-    ),
-    /* bottom, image */
-    url("../../img/good.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0% 20%;
-}
-
-

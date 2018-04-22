@@ -1,7 +1,7 @@
 from flask import Flask, abort
-from flask import request
+from flask import request, session
 import flask
-from webapp.helpers import template, createKeywordToResourceMap
+from webapp.helpers import template, createKeywordToResourceMap, validateResourceList
 from webapp.resources_list import resourceInfoMap
 from webapp.survey_questions import questions
 import json
@@ -67,6 +67,31 @@ def local_resources():
     keywordToResources = json.dumps(createKeywordToResourceMap(resourceInfoMap))
     return template('localresources', keywordToResources=keywordToResources, resourceInfoMap=resourceInfoMap)
 
+@app.route('/connections')
+def connections():
+    return template('connections')
+
+@app.route('/questionnaire-submit', methods=['POST'])
+def questionnaire_submit():
+    relevantResourceIds = [json.loads(request.get_data())]
+    session['personalized_resources'] = relevantResourceIds
+
+    return template('questionnaire-results', resources=relevantResourceIds, resourceInfoMap=resourceInfoMap)
+    
+
+@app.route('/questionnaire-results')
+def questionnaire_results():
+    # this should be replaced by getting the results out of the session
+    resource_results = ['dementia', 'veterans', 'stress']
+
+    # make sure all the results are valid resources
+    if not validateResourceList(resource_results, resourceInfoMap):
+        abort(500)
+
+    return template('questionnaire-results', resources=resource_results, resourceInfoMap=resourceInfoMap)
+
+
+##################### Calendar Stuff #####################
 
 # Send email event to BakerRipley employee for approval
 @app.route('/submitEvent', methods=['POST'])
@@ -124,7 +149,7 @@ def createEvent():
 
     event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
 
-    # print event
+    print(event)
 
     # Save credentials back to session in case access token was refreshed.
     # ACTION ITEM: In a production app, you likely want to save these
@@ -181,8 +206,4 @@ def oauth2callback():
   flask.session['credentials'] = oauthUtils.credentials_to_dict(credentials)
 
   return flask.redirect(flask.url_for('createEvent'), code=307)
-
-@app.route('/connections')
-def connections():
-    return template('connections')
 

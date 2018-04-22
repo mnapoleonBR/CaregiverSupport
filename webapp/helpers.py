@@ -20,3 +20,9 @@ def createKeywordToResourceMap(resourceInfo):
         for keyword in resource_object["keywords"]:
             keywordToResources[keyword].append(resource_name)
     return keywordToResources
+
+def validateResourceList(resource_list, resource_map):
+    for resource in resource_list:
+        if not (resource in resource_map):
+            return False
+    return True
