@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'Trade Gothic Bold Condensed';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Trade Gothic Light';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
+}
+
+body {
+ font-family: 'Trade Gothic Bold Condensed';
+}
+
+
 .row {
 	margin-top: 15px;
 	margin-bottom: 15px;
