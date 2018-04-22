@@ -1,27 +1,3 @@
-/*@font-face {
-	font-family: 'Rajdhani-Regular';
-	src: url(/static/assets/fonts/Rajdhani-Regular.ttf);
-}*/
-
-/*body {
-	font-family: 'Rajdhani-Regular';
-}*/
-
-@font-face {
-  font-family: 'Trade Gothic Bold Condensed';
-  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
-}
-
-@font-face {
-  font-family: 'Trade Gothic Light';
-  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
-}
-
-body {
-	font-family: 'Trade Gothic Light';
-}
-
-
 #calendarRow {
 	padding-top: 100px;
 	padding-left: 45px;
@@ -35,7 +11,12 @@ body {
 
 #calendar {
 	height:100%;
-	font-family: 'Trade Gothic Light', sans-serif;
+	font-family: 'Trade Gothic Light';
+}
+
+#calendar h2{
+	height:100%;
+	font-family: 'Trade Gothic Bold Condensed';
 }
 
 #eventCol {
@@ -44,15 +25,12 @@ body {
 	border-radius: 8px;
 }
 
-#event-info {
-	font-family: 'Trade Gothic Light', sans-serif;
-}
+
 
 #title {
 	margin-left: 5px;
 	padding-top: 10px;
 	font-size: 24pt;
-	font-family: 'Trade Gothic Bold Condensed', sans-serif;
 }
 
 #title a {
@@ -71,7 +49,6 @@ body {
 	margin-top: -4px;
 	font-size: 12pt;
 	color: #6b6b6b;
-	font-family: 'Trade Gothic Bold Condensed', sans-serif;
 
 }
 
@@ -80,7 +57,6 @@ body {
 	margin-top: -18px;
 	font-size: 12pt;
 	color: #6b6b6b;
-	font-family: 'Trade Gothic Bold Condensed', sans-serif;
 }
 
 #description {
@@ -88,7 +64,6 @@ body {
 	margin-right: 5px;
 	font-size: 12pt;
 	color: #474747;
-	/*font-family: 'Lato', sans-serif;*/
 }
 
 .modal-button {

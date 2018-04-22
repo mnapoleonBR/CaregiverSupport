@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Trade Gothic Bold Condensed';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTBoldCondensed.ttf);
+}
+
+@font-face {
+  font-family: 'Trade Gothic Light';
+  src: url(/static/assets/fonts/TradeGothic/TradeGothicLTLight.ttf);
+}
+
+body p{
+	font-family: 'Trade Gothic Light' !important;
+	font-size: 16px;
+}
+
+body h2, h3, h4, h5, h6{
+	font-family: 'Trade Gothic Bold Condensed';
+	font-size: 25px;
+}
