@@ -45,6 +45,10 @@ input[type="radio"] {
   margin-right: 10px;
 }
 
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
 label {
   margin-bottom: 0px;
   display: block;

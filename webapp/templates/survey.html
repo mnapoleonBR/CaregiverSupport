@@ -13,6 +13,8 @@
   <div class="modal-wrap">
     {% if existing_results %}
 
+    <!-- This code is for when we already have existing results for the user -->
+
     <div class="modal-header">
       <span class="is-active"></span>
     </div>
@@ -51,7 +53,7 @@
             <div>
               {% for option in question["options"] %}
                 <label>
-                  <input class="{{ question.ismultiple and 'is-multiple' }}" type="radio" value="{{ option['val'] }}"/>{{ option["text"] }}
+                  <input type="{{ 'checkbox' if question.ismultiple else 'radio' }}" value="{{ option['val'] }}"/>{{ option["text"] }}
                 </label>
               {% endfor %}
             </div>

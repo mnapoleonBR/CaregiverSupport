@@ -1,7 +1,7 @@
 var selectedResourceIds = []
 //var results = {};
 
-$('.button').click(function() {
+$(".button").click(function() {
   var $btn = $(this),
       $step = $btn.parents('.modal-body'),
       stepIndex = $step.index(),
@@ -68,11 +68,7 @@ function animateStep($step, $pag){
 }
 
 // only allow one input to be checked at a time for non-multiple questions
-$('input:not(.is-multiple)').on('change', function() {
+$("input[type=radio]").on('change', function() {
     $('input').not(this).prop('checked', false);  
 });
 
-//$('input:checked.is-multiple').click(function() {
-//    console.log("this is happening!!!!");
-//    $(this).prop('checked', !$(this).prop('checked'));
-//});
