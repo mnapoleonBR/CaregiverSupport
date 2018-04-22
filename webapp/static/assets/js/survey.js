@@ -8,7 +8,7 @@ $('.button').click(function(){
       $input = $btn.closest('form').find('input:checked');
 
   answers.push($input.val() || 'none');
-
+  console.log(answers)
   if ($step.next().length > 0) {
     animateStep($step, $pag);
   } else {
