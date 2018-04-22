@@ -121,7 +121,7 @@ function mouseOverFill(event, element) {
 	$('<a target="_blank" href=' + event.url + '>' + event.title + '</a>').appendTo('#title')
 
 	if(typeof event.location !== "undefined") {
-		$('<p> ' + event.location + ' </p>').appendTo('#location');
+		$('<h4> ' + event.location + ' </h4>').appendTo('#location');
 	} 
 
 	if(typeof event.description !== "undefined") {
@@ -129,7 +129,7 @@ function mouseOverFill(event, element) {
 	} 
 
 	if(typeof event.start !== "undefined" && event.end !== "undefined") {
-		$('<p> ' + start + ' - ' + end + ' </p>').appendTo('#dateTime');
+		$('<h4> ' + start + ' - ' + end + ' </h4>').appendTo('#dateTime');
 	} 
 
 	$(element).attr('id', 'tetherElement')

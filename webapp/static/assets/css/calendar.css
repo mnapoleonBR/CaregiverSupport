@@ -54,7 +54,7 @@
 
 #location {
 	margin-left: 5px;
-	margin-top: -18px;
+	margin-top: -8px;
 	font-size: 12pt;
 	color: #6b6b6b;
 }
@@ -77,6 +77,7 @@
 
 .btn {
 	border:none;
+	font-family: 'Trade Gothic Light';
 }
 
 .btn:hover {
@@ -155,4 +156,12 @@
 
 #event-info:empty {
 	border: none;
+}
+
+#event-info h4 {
+	font-size: 16.5px;
+}
+
+label {
+	font-family: 'Trade Gothic Light';
 }
