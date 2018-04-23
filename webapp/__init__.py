@@ -1,9 +1,8 @@
-from flask import Flask, abort
-from flask import request, session
+from flask import Flask, abort, request, session, redirect
 import flask
 from webapp.helpers import template, createKeywordToResourceMap, validateResourceList
 from webapp.resources_list import resourceInfoMap
-from webapp.survey_questions import questions
+from webapp.survey_questions import questionnaire_questions, topic_list_options
 import json
 import os
 import requests
@@ -77,7 +76,10 @@ def questionnaire():
     # check if there are already results stored in the session
     stored_results = session.get('personalized_resources')
     existing_results = stored_results and (len(stored_results) > 0)
-    return template('survey', questions=questions, existing_results=existing_results)
+    return template('survey', 
+      questionnaire_questions=questionnaire_questions, 
+      topic_list_options=topic_list_options,
+      existing_results=existing_results)
 
 @app.route('/questionnaire-submit', methods=['POST'])
 def questionnaire_submit():
@@ -94,10 +96,12 @@ def questionnaire_submit():
 
 @app.route('/questionnaire-results')
 def questionnaire_results():
-    # resource_results = session['personalized_resources']
-    resource_results = ['veterans', 'stress']
+    resource_results = session['personalized_resources']
+    if not resource_results:
+        return redirect("/questionnaire")
 
-    # TODO: figure out what to do when they have no results saved
+    # TODO: this is hardcoded, remove later
+    resource_results = ['veterans', 'stress']
 
     return template('questionnaire-results', resources=resource_results, resourceInfoMap=resourceInfoMap)
 
