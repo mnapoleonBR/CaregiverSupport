@@ -7,10 +7,6 @@ BakerRipley Connections
 {% block css %}
     {{ super() }}
     <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
-    <link rel='stylesheet' href={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.css') }} />
-    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/fullcalendar-custom.css') }} />
-    <link rel='stylesheet' href={{ url_for('static', filename='node_modules/font-awesome/css/font-awesome.min.css') }} />
-    <link rel='stylesheet' href={{ url_for('static', filename='node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.css') }} />
 {% endblock %}
 
 {% block content %}
@@ -25,25 +21,9 @@ BakerRipley Connections
 </div>
 
 <!-- Contact Form -->
- 
-<!-- <div id="contactForm">
-
-  <h1>Contact a Caregiver Specialist</h1> <br>
-  <small>BakerRipley employs Caregiver Support Specialists, licensed social workers, who can help you problem solve, discuss care options, and provide referrals to community services. If you would like one of our specialists to contact you, please complete the form below. Questions? Please call our CARELine at 713-685-6577
-</small>
-  
-  <form id ="form" action="#">
-    <input placeholder="Name" type="text" required />
-    <input placeholder="Email" type="email" required />
-    <input placeholder="Email, for accuracy" type="email" required />
-    <textarea placeholder="What would you like to talk about with our specialist?"></textarea>
-    <input class="formBtn" type="submit" />
-    
-  </form>
-</div>
- -->
-
-<button id="popup" onclick="div_show()">Connect with a Caregiver Support Specialist</button>
+<div class="text-center">
+    <button href="" type="button" class="btn btn-default button-orange btn-lg" style="margin-bottom:30px" data-toggle="modal" data-target="#modalForm">Connect to a Caregiver Specialist</button>
+</div> 
 
 <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -77,22 +57,10 @@ BakerRipley Connections
                         <button type="submit" class="btn btn-primary button-orange" id="submit">Submit</button>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
 
-<!-- <div class="container">
-    <a href="https://www.caregiver.org/" class="nounderline">
-        <div class="row row-padding">
-            <div class="col-md-10">
-                <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                <h2>Connect with a Caregiver Support Specialist</h2>
-            </div>
-        </div>
-    </a>
-</div>
- -->
 
 <div class="resource-content-container">
     <h1>Connect with Other Houston Caregivers</h1>
@@ -143,3 +111,12 @@ BakerRipley Connections
 
 
 {% endblock %}
+
+
+{% block js %}
+    <script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/bootstrap/dist/js/bootstrap.min.js') }}></script>
+    {{ super() }}
+{% endblock %}
+
+
