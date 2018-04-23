@@ -1,9 +1,8 @@
-from flask import Flask, abort
-from flask import request
+from flask import Flask, abort, request, session, redirect
 import flask
-from webapp.helpers import template, createKeywordToResourceMap
+from webapp.helpers import template, createKeywordToResourceMap, validateResourceList
 from webapp.resources_list import resourceInfoMap
-from webapp.survey_questions import questions
+from webapp.survey_questions import questionnaire_questions, topic_list_options
 import json
 import os
 import requests
@@ -50,10 +49,6 @@ def calendar():
 def national_resources():
     return template('nationalresources')
 
-@app.route('/assessment')
-def test():
-    return template('survey', questions=questions)
-
 @app.route('/resource/<resource_name>')
 def resource_page(resource_name):
     if resource_name in resourceInfoMap:
@@ -67,6 +62,51 @@ def local_resources():
     keywordToResources = json.dumps(createKeywordToResourceMap(resourceInfoMap))
     return template('localresources', keywordToResources=keywordToResources, resourceInfoMap=resourceInfoMap)
 
+@app.route('/connections')
+def connections():
+    return template('connections')
+
+@app.route('/questionnaire')
+@app.route('/questionnaire/restart')
+def questionnaire():
+    received_restart_request = request.path == '/questionnaire/restart'
+    if received_restart_request and session.get('personalized_resources'):
+        session.pop('personalized_resources')
+
+    # check if there are already results stored in the session
+    stored_results = session.get('personalized_resources')
+    existing_results = stored_results and (len(stored_results) > 0)
+    return template('survey', 
+      questionnaire_questions=questionnaire_questions, 
+      topic_list_options=topic_list_options,
+      existing_results=existing_results)
+
+@app.route('/questionnaire-submit', methods=['POST'])
+def questionnaire_submit():
+    relevantResourceIds = json.loads(request.get_data())
+
+    # make sure all the results are valid resources
+    if not validateResourceList(relevantResourceIds, resourceInfoMap):
+        return json.dumps({'error_message': 'Invalid resources'}), 400
+
+    session['personalized_resources'] = relevantResourceIds
+
+    return json.dumps({'redirect_link': '/questionnaire-results'})
+    
+
+@app.route('/questionnaire-results')
+def questionnaire_results():
+    resource_results = session['personalized_resources']
+    if not resource_results:
+        return redirect("/questionnaire")
+
+    # TODO: this is hardcoded, remove later
+    resource_results = ['veterans', 'stress']
+
+    return template('questionnaire-results', resources=resource_results, resourceInfoMap=resourceInfoMap)
+
+
+##################### Calendar Stuff #####################
 
 # Send email event to BakerRipley employee for approval
 @app.route('/submitEvent', methods=['POST'])
@@ -124,7 +164,7 @@ def createEvent():
 
     event = service.events().insert(calendarId=CALENDAR_ID, body=event).execute()
 
-    # print event
+    print(event)
 
     # Save credentials back to session in case access token was refreshed.
     # ACTION ITEM: In a production app, you likely want to save these
@@ -181,8 +221,4 @@ def oauth2callback():
   flask.session['credentials'] = oauthUtils.credentials_to_dict(credentials)
 
   return flask.redirect(flask.url_for('createEvent'), code=307)
-
-@app.route('/connections')
-def connections():
-    return template('connections')
 

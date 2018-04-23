@@ -23,7 +23,7 @@ BakerRipley Local Resources Page
 
     <div class="resourcesResultsContainer">
         <div class="resourceResults">
-            {% for resource_id, resource_info in resourceInfoMap.iteritems() %}
+            {% for resource_id, resource_info in resourceInfoMap.items() %}
                 <div class="resultColumn" id="{{ resource_id }}">
                     <a href="/resource/{{ resource_id }}">
                         <div class="resultPanel">

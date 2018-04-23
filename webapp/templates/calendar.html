@@ -8,6 +8,8 @@ BakerRipley Calendar of Events
 	{{ super() }}
 	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/fullcalendar/dist/fullcalendar.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='assets/css/fullcalendar-custom.css') }} />
+	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/tether/dist/css/tether.min.css') }} />
+	<script src={{ url_for('static', filename='node_modules/tether/dist/js/tether.min.js') }}></script>
 	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/font-awesome/css/font-awesome.min.css') }} />
 	<link rel='stylesheet' href={{ url_for('static', filename='node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.css') }} />
 {% endblock %}
@@ -30,16 +32,18 @@ BakerRipley Calendar of Events
 	</div>
 
 	<div class="row" id="calendarRow">
-		<div class="col-md-8">
+		<div class="col-md-12">
 			<div id='calendar'></div>
 		</div>
-		<div class="col-md-4 hidden-md-down" id="eventCol">
-			<div id='event-info'>
-				<div id='title'> </div>
-				<div id='dateTime'></div>
-				<div id='location'></div>
-				<div id='description'></div>
-			</div>
+		<div id='event-info'>
+			<div id='title'> </div>
+			<div id='dateTime'></div>
+			<div id='location'></div>
+			<div id='description'></div>
+			<div id='linkbtn' class="justify-content-center text-center">
+			 	<button type="button" style="margin-bottom: 10px" class="btn btn-secondary btn-close" id="closeInfoButton">Close</button>
+			 	<a target="_blank" href="" role="button" id='linkButton' class="btn btn-primary button-orange" style="margin-bottom:10px">Add Event to your Google Calendar</a>
+		 	</div>
 		</div>
 	</div>
 

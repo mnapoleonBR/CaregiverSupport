@@ -45,6 +45,10 @@ input[type="radio"] {
   margin-right: 10px;
 }
 
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
 label {
   margin-bottom: 0px;
   display: block;
@@ -85,6 +89,7 @@ label:last-child {
 
 .text-center {
   text-align: center;
+  margin: 0px 80px;
 }
 
 .modal-wrap {
@@ -146,6 +151,16 @@ label:last-child {
 }
 .modal-body.is-showing {
   display: block;
+}
+
+/*.hidden {
+  display: none;
+}*/
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .animate-out {

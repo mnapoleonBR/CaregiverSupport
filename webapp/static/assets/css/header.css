@@ -230,7 +230,7 @@ body.menu-activated {
   /* these transitions aren't working!!!! */
   transition: all .3s ease-in-out;
   -webkit-transition: all .3s ease-in-out;
-  font-size: 30px;
+  font-size: 40px;
   padding: 10px 0px;
 }
 
