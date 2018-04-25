@@ -86,8 +86,8 @@ def questionnaire_submit():
     relevantResourceIds = json.loads(request.get_data())
 
     # make sure all the results are valid resources
-    if not validateResourceList(relevantResourceIds, resourceInfoMap):
-        return json.dumps({'error_message': 'Invalid resources'}), 400
+    # if not validateResourceList(relevantResourceIds, resourceInfoMap):
+    #     return json.dumps({'error_message': 'Invalid resources'}), 400
 
     session['personalized_resources'] = relevantResourceIds
 
