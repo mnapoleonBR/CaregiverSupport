@@ -58,6 +58,8 @@ label {
   border-top: 1px solid #ddd;
   padding: 20px 0;
   cursor: pointer;
+  padding-left: 22px;
+  text-indent: -22px;
 }
 label:last-child {
   margin-bottom: 20px;
