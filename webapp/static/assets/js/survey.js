@@ -19,7 +19,7 @@ $(document).ready(function() {
   $(".button").click(function() {
     var $btn = $(this),
         $step = $btn.parents('.modal-body'),
-        stepIndex = $step.index(),
+        stepIndex = $step.index() + 1,
         $pag = $('.modal-header span').eq(stepIndex),
         $input = $btn.closest('form').find('input:checked'),
         isMultiselect = $btn.closest('form').hasClass('is-multiple'),
@@ -40,7 +40,7 @@ $(document).ready(function() {
     } else if ($input.val() === "yes") {
        selectedResourceIds.push(id);
     }
-    
+    console.log(stepIndex);
     if ($step.next().length > 0) {
       animateStep($step, $pag);
     } else {
