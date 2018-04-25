@@ -18,11 +18,11 @@ BakerRipley Questionnaire Results
     
     <div class="container">
         <div class="buttonContainer">
-            <button type="button" class="btn btn-outline-primary btn-lg">
-                <a href="/questionnaire/restart" style="color:inherit; text-decoration: none">Retake Questionnaire</a>
+            <button type="button" onclick="location.href = '/questionnaire/restart'" class="btn btn-outline-primary btn-lg">
+                Retake Questionnaire
             </button>
-            <button type="button" class="btn btn-outline-secondary btn-lg">
-                <a href="/local-resources" style="color:inherit; text-decoration: none">See All Resources</a>
+            <button type="button" onclick="location.href = '/local-resources'" class="btn btn-outline-secondary btn-lg">
+                See All Resources
             </button>
         </div>
         {% for resource in resources %}
