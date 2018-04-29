@@ -197,6 +197,10 @@ body {
   text-align: center;
 }
 
+#site-nav-buffer a{
+  font-family: 'Trade Gothic Bold Condensed', sans-serif !important;
+}
+
 body.menu-activated #site-nav-buffer {
   visibility: visible;
   opacity: 1;
