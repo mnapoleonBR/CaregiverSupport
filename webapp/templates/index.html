@@ -21,16 +21,10 @@ BakerRipley Homepage
 
 
 {% block content %}
-  <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body style="background-color:#f9f9f9;">
 	
-	{% set title = "BakerRipley Caregiver Homepage" %}
-	{% include 'header.html' %}
+{% set title = "BakerRipley Caregiver Homepage" %}
+{% set description = "" %}
+{% include 'header.html' %}
 
 	
 <div class="container">
@@ -49,24 +43,12 @@ BakerRipley Homepage
                 <div class="card-body">
                     <i onclick="window.location='/questionnaire';" href= "calendar.html" class="fa fa-check-circle fa-4x"></i>
 					<h5 class="card-title mt-3">Caregiver Assessment Tool</h5>
-					<p class="card-text">New to caregiving and don't know where to start? Answer this brief questionnaire! </p>
+					<p class="card-text">Don't know where to start? Answer this brief questionnaire! </p>
 				</div>
 
             </a>
         </div>
         <div class="col-md-4 py-2">
-            <a class="card h-100 box" href="/questionnaire">
-            	<div class="card-body">
-                	<i onclick="window.location='/questionnaire';" href= "calendar.html" class="fa fa-check-circle fa-4x"></i>
-					<h5 class="card-title mt-3">Caregiver Assessment Tool</h5>
-					<p class="card-text">New to caregiving and don't know where to start? Answer this brief questionnaire! </p>
-				</div>
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
-		<div class="col-md-4 py-2">
             <a class="card h-100 box" href="/connections">
             	<div class="card-body">
                 	<i onclick="window.location='/connections';" class="fa fa-bell fa-4x"></i>
@@ -75,12 +57,16 @@ BakerRipley Homepage
 				</div>
             </a>
         </div>
+    </div>
+
+    <div class="row">
+		
         <div class="col-md-4 py-2">
             <a class="card h-100 box" href="/local-resources">
                 <div class="card-body">
                     <i onclick="window.location='/local-resources';" class="fa fa-search-plus fa-4x"></i>
 					<h5 class="card-title mt-3">Local Resource Finder</h5>
-					<p class="card-text">Caregiving resources from the Houston area.</p>
+					<p class="card-text">Caregiving resources specific to the Houston area.</p>
 				</div>
             </a>
         </div>
@@ -90,6 +76,15 @@ BakerRipley Homepage
                 	<i onclick="window.location='/national-resources';" class="fa fa-compass fa-4x"></i>
 					<h5 class="card-title mt-3">National Resources</h5>
 					<p class="card-text">Additional links to national associations related to caregiving.</p>
+				</div>
+            </a>
+        </div>
+        <div class="col-md-4 py-2">
+            <a class="card h-100 box" href="http://bakerripley.org">
+            	<div class="card-body">
+            		<i class="fa fa-home fa-4x"> </i>
+					<h5 class="card-title mt-3">BakerRipley Website</h5>
+					<p class="card-text">Go to BakerRipley's website</p>
 				</div>
             </a>
         </div>

@@ -6,6 +6,7 @@ html {
 
 body {
   background-color: transparent;
+    font-size: 1.5rem;
 }
 
 .title {
@@ -14,7 +15,7 @@ body {
   margin-bottom: 30px;
   color: #FF8F00;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 39px;
   letter-spacing: 1px;
 }
 
@@ -52,11 +53,13 @@ input[type="checkbox"] {
 label {
   margin-bottom: 0px;
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
   border-top: 1px solid #ddd;
   padding: 20px 0;
   cursor: pointer;
+  padding-left: 22px;
+  text-indent: -22px;
 }
 label:last-child {
   margin-bottom: 20px;
@@ -85,6 +88,13 @@ label:last-child {
   -webkit-box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 10px 15px -6px rgba(0, 0, 0, 0.2);
   display: none;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    border-radius: .3rem;
 }
 
 .text-center {
