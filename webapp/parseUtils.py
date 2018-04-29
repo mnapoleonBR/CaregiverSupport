@@ -41,6 +41,8 @@ def pingLinks(links):
 	notWorkingLinks = []
 	pool = ThreadPool(8) 
 	responses = pool.map(requests.head, links)
+	pool.close()
+	pool.join()
 	for response in responses:
 		if response.status_code < 400:
 			workingLinks.append(response.url)
