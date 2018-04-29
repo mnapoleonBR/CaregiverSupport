@@ -162,6 +162,10 @@
 	font-size: 16.5px;
 }
 
+#datetimepicker-input p, ul {
+	font-size: 18px;
+}
+
 label {
 	font-family: 'Trade Gothic Light';
 }
