@@ -32,11 +32,13 @@ $(document).ready(function() {
        selectedResourceIds.push(id);
     }
     
+    // if this is not the last question, switch to next quetsion
     if ($step.next().length > 0) {
-      animateStep($step, $pag);
-    
+      $pag.removeClass('is-active').next().addClass('is-active');
+
+      $step.removeClass('is-showing').next().addClass('is-showing');
+    // otherwise, submit the results
     } else {
-      console.log("yo")
       submitResourceIds(selectedResourceIds);
     }
     return false;
@@ -54,23 +56,6 @@ $(document).ready(function() {
         console.log(JSON.parse(response.responseText));
       }
     });
-  }
-
-  function animateStep($step, $pag){
-    // animate the step out
-    //$step.addClass('animate-out');
-    
-    // change the current step to inactive, and next step to active
-    setTimeout(function(){
-      $pag.removeClass('is-active')
-            .next().addClass('is-active');
-    }, 300);
-    
-    // afterwards, adjust the classes
-    setTimeout(function(){
-        $step.removeClass('is-showing')
-            .next().addClass('is-showing');
-    }, 300);
   }
 
   // only allow one input to be checked at a time for non-multiple questions
