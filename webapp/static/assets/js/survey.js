@@ -16,7 +16,8 @@ $(document).ready(function() {
 
   var selectedResourceIds = []
 
-  $(".button").click(function() {
+  $(".button").click(function(evt) {
+    evt.preventDefault();
     var $btn = $(this),
         $step = $btn.parents('.modal-body'),
         stepIndex = $step.index() + 1,
@@ -40,13 +41,15 @@ $(document).ready(function() {
     } else if ($input.val() === "yes") {
        selectedResourceIds.push(id);
     }
-    console.log(stepIndex);
+    
     if ($step.next().length > 0) {
       animateStep($step, $pag);
+    
     } else {
       console.log("yo")
       submitResourceIds(selectedResourceIds);
     }
+    return false;
   });
 
   function submitResourceIds(resourceIds) {
@@ -65,22 +68,19 @@ $(document).ready(function() {
 
   function animateStep($step, $pag){
     // animate the step out
-    $step.addClass('animate-out');
+    //$step.addClass('animate-out');
     
-    // animate the step in
+    // change the current step to inactive, and next step to active
     setTimeout(function(){
-      $step.removeClass('animate-out is-showing')
-           .next().addClass('animate-in');
       $pag.removeClass('is-active')
             .next().addClass('is-active');
-    }, 600);
+    }, 300);
     
-    // after the animation, adjust the classes
+    // afterwards, adjust the classes
     setTimeout(function(){
-      $step.next().removeClass('animate-in')
-            .addClass('is-showing');
-      
-    }, 1200);
+        $step.removeClass('is-showing')
+            .next().addClass('is-showing');
+    }, 300);
   }
 
   // only allow one input to be checked at a time for non-multiple questions
