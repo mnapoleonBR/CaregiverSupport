@@ -17,9 +17,9 @@ Valid Link Checker
 	{%for template in mapping%}
 		{% if mapping[template]['working']|length > 0 %}
 			<div class=''>
-				<h4 style='color:green'> Working Links in {{template}}</h4>
+				<h3 style='color:green;'> Working Links in {{template}}</h4>
 				{% for link in mapping[template]['working'] %}
-				<a href="{{link}}" >
+				<a style='font-size:20px' href="{{link}}" >
 					{{link}}
 				</a>
 				<br>
@@ -29,10 +29,10 @@ Valid Link Checker
 
 		{% if mapping[template]['notWorking']|length > 0 %}
 			<div class=''>
-				<h4 style='color:red'> Non-Working Links in {{template}} </h4>
+				<h3 style='color:red'> Non-Working Links in {{template}} </h4>
 				<br>
 				{% for link in mapping[template]['notWorking'] %}
-				<a href="{{link}}" >
+				<a style='font-size:20px' href="{{link}}" >
 					{{link}}
 				</a>
 				{% endfor %}
