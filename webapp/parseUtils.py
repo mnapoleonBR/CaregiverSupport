@@ -1,11 +1,8 @@
-import httplib2
 import os
+import requests
 from bs4 import BeautifulSoup, SoupStrainer
 from os import listdir
 from collections import defaultdict
-
-http = httplib2.Http()
-status, response = http.request('http://baker-ripley.herokuapp.com/national-resources')
 
 templateDirectory = './webapp/templates'
 
@@ -40,40 +37,13 @@ def getValidLinks(links):
 def pingLinks(links):
 	workingLinks = []
 	notWorkingLinks = []
-	h = httplib2.Http()
 	for link in links:
-		resp, content = h.request(link, 'HEAD')
-		if resp.status < 400:
+		resp = requests.head(link)
+		if resp.status_code < 400:
 			workingLinks.append(link)
 		else:
 			notWorkingLinks.append(link)
 	return workingLinks, notWorkingLinks
-
-def isLinkValid(link):
-	h = httplib2.Http()
-	resp, content = h.request(link, 'HEAD')
-	if resp.status < 400:
-		return true
-	return false
-	
-	# print 'HERE'
-	# print 'HERE'
-	# print 'HERE'
-	# print 'HERE'
-	# for key in finalLinks:
-	# 	print key
-	# 	for link in finalLinks[key]:
-	# 		for k in link:
-	# 			print k
-	# 			print link[key]
-	# return finalLinks
-
-# /home: 
-# 	valid: "google.com"
-# 	invalid: "yahoo.com"
-# /calendar:
-# 	valid: 'helloworld.com'
-# 	invalid: 'bakerripley.org'
 
 def getLinksFromHtml():
 	templateToValid = {}
