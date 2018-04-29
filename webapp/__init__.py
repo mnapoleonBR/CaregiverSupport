@@ -115,9 +115,9 @@ def submitMessage():
 
 @app.route('/checkLinks', methods=['GET'])
 def checkLinks():
-  # validLinks = parseUtils.getLinksFromHtml()
-  # return template('linkchecker', mapping=validLinks)
-  return 'success'
+  validLinks = parseUtils.getLinksFromHtml()
+  return template('linkchecker', mapping=validLinks)
+  # return 'success'
 
 ##################### Calendar Stuff #####################
 
