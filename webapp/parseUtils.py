@@ -3,6 +3,8 @@ import requests
 from bs4 import BeautifulSoup, SoupStrainer
 from os import listdir
 from collections import defaultdict
+from multiprocessing.dummy import Pool as ThreadPool 
+
 
 templateDirectory = './webapp/templates'
 
@@ -37,12 +39,13 @@ def getValidLinks(links):
 def pingLinks(links):
 	workingLinks = []
 	notWorkingLinks = []
-	for link in links:
-		resp = requests.head(link)
-		if resp.status_code < 400:
-			workingLinks.append(link)
+	pool = ThreadPool(8) 
+	responses = pool.map(requests.head, links)
+	for response in responses:
+		if response.status_code < 400:
+			workingLinks.append(response.url)
 		else:
-			notWorkingLinks.append(link)
+			notWorkingLinks.append(response.url)
 	return workingLinks, notWorkingLinks
 
 def getLinksFromHtml():

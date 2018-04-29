@@ -13,25 +13,33 @@ Valid Link Checker
 
 {% block content %}
 
-{% set title = "Local Caregiver Resources" %}
-{% include 'header.html' %}
+<div class='container'>
+	{%for template in mapping%}
+		{% if mapping[template]['working']|length > 0 %}
+			<div class=''>
+				<h4 style='color:green'> Working Links in {{template}}</h4>
+				{% for link in mapping[template]['working'] %}
+				<a href="{{link}}" >
+					{{link}}
+				</a>
+				<br>
+				{% endfor %}
+			</div>
+		{% endif %}
 
-{%for template in mapping%}
-	<div>
-		<h4> Working Links in {{template}}</h4>
-		{% for link in mapping[template]['working'] %}
-		<p>
-			{{link}}
-		</p>
-		{% endfor %}
-		<h4> Not Working Links in {{template}} </h4>
-		{% for link in mapping[template]['notWorking'] %}
-		<p>
-			{{link}}
-		</p>
-		{% endfor %}
-	</div>
-{% endfor %}
+		{% if mapping[template]['notWorking']|length > 0 %}
+			<div class=''>
+				<h4 style='color:red'> Non-Working Links in {{template}} </h4>
+				<br>
+				{% for link in mapping[template]['notWorking'] %}
+				<a href="{{link}}" >
+					{{link}}
+				</a>
+				{% endfor %}
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
 
 
 
