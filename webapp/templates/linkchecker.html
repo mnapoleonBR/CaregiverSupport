@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Valid Link Checker
+{% endblock %}
+
+
+{% block css %}
+    {{ super() }}
+{% endblock %}
+
+
+
+{% block content %}
+
+{% set title = "Local Caregiver Resources" %}
+{% include 'header.html' %}
+
+{%for template in mapping%}
+	<div>
+		<h4> Working Links in {{template}}</h4>
+		{% for link in mapping[template]['working'] %}
+		<p>
+			{{link}}
+		</p>
+		{% endfor %}
+		<h4> Not Working Links in {{template}} </h4>
+		{% for link in mapping[template]['notWorking'] %}
+		<p>
+			{{link}}
+		</p>
+		{% endfor %}
+	</div>
+{% endfor %}
+
+
+
+
+{% endblock %}
+
+{% block js %}
+    <script src={{ url_for('static', filename='node_modules/jquery/dist/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/jquery-ui-dist/jquery-ui.min.js') }}></script>
+    <script src={{ url_for('static', filename='node_modules/tag-it/js/tag-it.min.js') }}></script>
+    {{ super() }}
+{% endblock %}

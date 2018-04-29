@@ -113,10 +113,10 @@ def submitMessage():
     emailUtils.send_email(msg)
     return 'success'
 
-@app.route('/getLinks', methods=['GET'])
-def getLinks():
-  parseUtils.getAllLinks()
-  return 'success'
+@app.route('/checkLinks', methods=['GET'])
+def checkLinks():
+  validLinks = parseUtils.getLinksFromHtml()
+  return template('linkchecker', mapping=validLinks)
 
 ##################### Calendar Stuff #####################
 
