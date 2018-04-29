@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley New To Caregiving Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Taking Care of Yourself" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        It’s no secret, being a caregiver is sometimes challenging and overwhelming.  When caring for someone else, it’s easy to put your own needs aside. It can be an isolating journey. Although, you may feel like you can do it all alone, it is vital that you establish a healthy support system and remember to care for yourself. The following resources contain tips for self-care, ways to establish a support system, workshops that help you to cope with the stresses of caregiver and options for getting a break.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h1>What is self care and why should I do it?</h1>
+        <p>
+            Self care is any activity done to take care of your own physical, emotional, and mental health. Self care is essential for caregivers and is not a luxury, it is a necessity; if you are unwell, you are unable to provide care for someone else. Remember, always "put your oxygen mask on first."
+        </p>
+    <h2> Learning How to Take Care of Yourself </h2> 
+        <p>As a caregiver, you spend a lot of time caring for your loved one and as a result, you may forget the most important person in the equation, YOU! <a href="https://www.aarp.org/relationships/caregiving/info-06-2010/crc-10-caregiver-stress-managment-tips.html">The AARP, has identified some tips for practicing for self-care</a>.
+        </p>
+    <h2> Understanding and Managing Stress </h2> 
+        <p> BakerRipley offers two stress management classes that provide caregivers with the tools needed to care for themselves.   Powerful Tools for Caregivers is a 6 week program that helps family caregivers to build coping skills and learn techniques for self-care that reduce the stress of caring for an older loved one.  Stress-Busting for Family Caregivers is a 9 week program focused on education, support, and stress management using a holistic approach to address  the emotional, physical, and spiritual needs of caregivers. 
+        To find a program or class in your area, visit our <a href ="calendar.html">calendar</a>.
+        </p>
+    <h1>Establishing Your Support Team</h1>
+        <p>
+            It’s important to reach out to others for help while caregiving. Creating a strong network of professionals and family and friends can help you take care of yourself. 
+        </p>
+        <h2> Who can be included in your support team? </h2> 
+            <p> Informal supports such as family members, friends, faith community, coworkers, neighbors, and other caregivers.</p>
+            <p> Formal supports like caregiver support specialists, paid caregivers or service providers, physicians, nurses, case managers, and employee assistance programs. Check our the BakerRipley Caregiver Support Services for a list of services. </p> 
+        <h2> How do I build my support team </h2> 
+            <p> Contact <a href="https://www.aarp.org/"> AARP</a>. The BakerRipley Caregiver Support Team is also available to guide you through this process. Contact someone directly by calling 713.685.6577.
+            <p> Want more infromation on how to build your support team? Check out the <a href="https://www.caregiver.org/saying-yes-offers-help"> Family Caregiving Alliance's<a> resources on saying yes to offers of help which provides strategies to best utilize your support system and accept help.
+
+        <h2> Respite </h2> 
+            <p> Another way to manage stress is through getting a break from  your role as a caregiver.  Visit our <a href="respite.html"> respite page </a>to learn more about the types of respite and the resources available to pay for it. </p>
+
+    <p>
+        Do you have a good resource we should include on this page? Do you want to talk to someone about these resources? Contact us!
+    </p>
+    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley New To Caregiving Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "New To Caregiving" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Caregiving can be a daunting task and you may feel like you are in a whirlwind. You may be feeling worried, scared, guilty, anxious, etc.  This website has tools to equip you on your caregiving journey.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h2>Tools you can use</h2>
+    <p>
+        There are a variety of tools available to help you manage your caregiving responsibility. There are a variety of national websites with tools and information on caregiving. Click here to be connected. 
+        <a href="https://apps.hhs.texas.gov/ltcsearch/providersearch.cfm">AARP Prepare to Care Workbook</a> is another resource that can guide you through the beginning of your caregiving journey.  It includes a list of national resources, checklists, assessments that can be used to help to be better prepared and organized.It is also offered in a variety of languages 
+    </p>
+    <h2> Getting Help </h2> 
+    <p>It’s important to reach out for help while caregiving. Your friends and family can be your most important resource. Not only can they provide physical help, they can also support you emotionally. Visit our Self Care and Social Support Page for tips on how to identify who can help you. 
+
+    You can also reach out to professionals for support. Professionals are available to assist you in connecting to resources, decision-making, future planning, providing hands-on care, and emotional support. To get help from a professional, please contact our Caregiver Support Specialist
+    </p>
+    <h2> Understanding the Lingo </h2> 
+    <p>Below is a brief overview of words and acronyms commonly used by caregivers and people working with them:</p>
+    <ul> 
+        <li> 
+            <strong>Activities of Daily Living (ADLs):</strong> <span style="font-weight:thin;">Basic daily tasks that include, but are not limited to dressing, bathing, eating and toileting.</span>
+        </li>
+        <li> 
+            <strong>Adult Day Center:</strong> Non-residential facility that includes a variety of social, health and support services for adults in a professionally staffed facility.
+        </li> 
+        <li> 
+            <strong>Aging and Disability Resource Center (ADRC):</strong> An agency designated by the state to provide older adults and individuals with disabilities information, resources and connection to community services. 
+        </li> 
+        <li> 
+            <strong>Case Management:</strong> Service designed meet an individual of families needs through assessment, planning, and care coordination.
+        </li> 
+        <li> 
+            <strong>Continuing Care Retirement Communities (CCRC):</strong> Residential facility that offers independent living, assisted living, memory care, and nursing care. Services are offered on one campus and are designed to meet one’s changing needs.
+        </li>
+        <li> 
+            <strong>Do Not Resuscitate (DNR):</strong> An order completed by a doctor that communicates an individual's desired wishes during a medical emergency.
+        </li> 
+        <li> 
+            <strong>Employee Assistance Program (EAP):</strong> Work based program designed to identify and assist employees in addressing personal problems that impact their job performance, health, and well-being. Program typically refers employees to resources and offers assistance with paying for services. 
+        </li>
+        <li> 
+            <strong>Family and Medical Leave Act (FMLA):</strong> A law requiring some employers to allow employees unpaid leave for qualified medical and family reasons.  
+        </li>
+        <li> 
+            <strong>Instrumental Activities of Daily Living (IADLs):</strong> Basic daily tasks such as managing money, shopping, housekeeping and preparing meals. 
+        </li>
+        <li> 
+            <strong>Health Insurance Portability Accountability Act (HIPAA):</strong> A law that provides data privacy and security provisions for safeguarding medical information. 
+        </li>
+        <li> 
+            <strong>Hospice Care:</strong>  Service designed to provide terminally ill people and their families with pain management, social services, and emotional and spiritual support. 
+        </li>
+        <li> 
+            <strong>Long Term Care Insurance:</strong> Insurance designed to pay for the cost of long-term care services such as in-home, assisted living or nursing home. 
+        </li>
+        <li> 
+            <strong>Medicare:</strong> A federal health insurance program for people age 65 and over, and for some younger individuals that qualify due to a disability.  
+        </li>
+        <li> 
+            <strong>Medicaid:</strong> A state managed program that provides eligible beneficiaries with health and long-term care benefits. 
+        </li>
+        <li> 
+            <strong>Palliative Care:</strong> Provides terminally ill people with services that support their physical, mental, and emotional needs. 
+        </li>
+        <li> 
+            <strong>Power of Attorney:</strong> Legal document that authorizes a person to act for another person in legal and financial matters. 
+        </li>
+        <li> 
+            <strong>Provider Services:</strong> Services designed to assist individuals with their personal care needs such as bathing, dressing, meal preparation and grocery shopping. 
+        </li>
+        <li> 
+            <strong>Respite:</strong> Provides family caregivers with a temporary break from their caregiving responsibilities. 
+        </li>
+        <li> 
+            <strong>Social Security Income (SSI):</strong> A federal program that provides a monthly benefit to people age 65 and over, disabled or blind, and have limited income. 
+        </li>
+    </ul> 
+    
+</div>
+
+
+{% endblock %}

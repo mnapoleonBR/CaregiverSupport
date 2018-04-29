@@ -77,7 +77,7 @@ def questionnaire():
     # check if there are already results stored in the session
     stored_results = session.get('personalized_resources')
     existing_results = stored_results and (len(stored_results) > 0)
-    return template('survey', 
+    return template('questionnaire', 
       questionnaire_questions=questionnaire_questions, 
       topic_list_options=topic_list_options,
       existing_results=existing_results)

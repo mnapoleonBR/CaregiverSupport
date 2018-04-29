@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley Healthcare Benefits Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Healthcare Benefits" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Understanding who pays for what can be confusing when caring for an older adult. Below is an outline of some of the common benefits older adults receive and links to the local agencies that can help you understand them.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h1>Medicare vs. Medicaid</h1>
+    <p>
+        The words Medicare and Medicaid are frequently used and are often interchanged when talking about care. However, Medicare and Medicaid are 2 distinct benefits that cover different services. 
+    </p>
+    <p>
+        <h2> Key Facts </h2> 
+        <ul> 
+            <li> Medicare does NOT cover long term care such as nursing homes, assisted living, or adult day facilities. </li>
+            <li> Medicaid is a state-run program and Medicare is a federally run program. </li>
+            <li> You can qualify for both Medicare and Medicaid </li>
+        </ul> 
+    </p>
+    <p>
+        For more detailed information on Medicare and Medicaid, please visit the following links:
+        <strong>
+            Where can I get help understanding my benefit options?
+        </strong>
+        The <strong> Harris County Area Agency on Aging </strong> offers benefits counselors to help you understand what benefits you are eligible for, what services you can receive under those benefits, and how to apply for those benefits. These services are available for people over the age of 60 and their caregivers who reside in Harris County. For more information call, 832-393-4301
+        The <strong> CareConnection Aging and Disability Resource Center </strong> also offers benefits counseling. Their services are available to individuals with disabilities, individuals over the age of 60, and their caregivers who reside within their 13 county service region which includes Austin, Brazoria, Chambers, Colorado, Fort Bend, Galveston, Harris, Liberty, Matagorda, Montgomery, Walker, Waller and Wharton. For more information call, <strong> 1-855-YES-ADRC (1-855-937-2372)</strong>.
+    </p>
+    <p>
+    Do you have a good resource we should include on this page? Do you want to talk to someone about these resources? Contact us.
+    </p>
+</div>
+
+
+{% endblock %}
