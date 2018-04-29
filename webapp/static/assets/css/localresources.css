@@ -52,6 +52,11 @@ h3 {
   font-size: 2rem;
 }
 
+.btn-primary {
+  background-color: #2e9eca;
+  border-color: #2e9eca;
+}
+
 .resultPanel {
   background: white;
   margin: 15px;

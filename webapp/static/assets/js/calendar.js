@@ -45,7 +45,7 @@ $(document).ready(function() {
 	    	return false
   		}
 
-})
+	})
 
 	$('#eventForm').submit(function(e) {
 		e.preventDefault();
@@ -137,7 +137,6 @@ function mouseOverFill(event, element) {
 	$('#linkButton').attr('href', event.url)
 
 	if ($('#calendar').fullCalendar('getView').name !== "listMonth") {
-		console.log('FIRST')
 		infoTether = new Tether({
 			element: '#event-info',
 			target: '#tetherElement',
@@ -153,7 +152,6 @@ function mouseOverFill(event, element) {
 		});
 	} 
 	else {
-		console.log('SECOND')
 		infoTether = new Tether({
 			element: '#event-info',
 			target: '#tetherElement',

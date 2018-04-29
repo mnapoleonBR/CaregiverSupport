@@ -15,6 +15,7 @@ import googleapiclient.discovery
 
 import webapp.emailUtils
 import webapp.oauthUtils
+import webapp.parseUtils
 
 # This variable specifies the name of a file that contains the OAuth 2.0
 # information for this application, including its client_id and client_secret.
@@ -76,7 +77,7 @@ def questionnaire():
     # check if there are already results stored in the session
     stored_results = session.get('personalized_resources')
     existing_results = stored_results and (len(stored_results) > 0)
-    return template('survey', 
+    return template('questionnaire', 
       questionnaire_questions=questionnaire_questions, 
       topic_list_options=topic_list_options,
       existing_results=existing_results)
@@ -105,6 +106,17 @@ def questionnaire_results():
 
     return template('questionnaire-results', resources=resource_results, resourceInfoMap=resourceInfoMap)
 
+
+@app.route('/submitMessage', methods=['POST'])
+def submitMessage():
+    msg = emailUtils.createConnectionsMessage(request)
+    emailUtils.send_email(msg)
+    return 'success'
+
+@app.route('/getLinks', methods=['GET'])
+def getLinks():
+  parseUtils.getAllLinks()
+  return 'success'
 
 ##################### Calendar Stuff #####################
 
