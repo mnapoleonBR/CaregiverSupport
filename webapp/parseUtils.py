@@ -45,10 +45,8 @@ def pingLinks(links):
 		resp, content = h.request(link, 'HEAD')
 		if resp.status < 400:
 			workingLinks.append(link)
-			print link + ' is valid'
 		else:
 			notWorkingLinks = []
-			print link + ' IS NOT VALID'
 	return workingLinks, notWorkingLinks
 
 def isLinkValid(link):
