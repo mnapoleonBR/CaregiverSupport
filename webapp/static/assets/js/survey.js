@@ -4,16 +4,6 @@ $(document).ready(function() {
   $("#topics-list").hide();
   $("#questionnaire").hide();
 
-  $("#questionnaire-button").click(function() {
-    $("#questionnaire").show();
-    $("#short-or-long").hide();
-  });
-
-  $("#topic-button").click(function() {
-    $("#topics-list").show();
-    $("#short-or-long").hide();
-  });
-
   var selectedResourceIds = []
 
   $(".button").click(function() {
@@ -87,4 +77,24 @@ $(document).ready(function() {
   $("input[type=radio]").on('change', function() {
       $('input').not(this).prop('checked', false);  
   });
+
+  $("#questionnaire-button").click(function() {
+    $("#questionnaire").show();
+    $("#short-or-long").hide();
+  });
+
+  $("#topic-button").click(function() {
+    $("#topics-list").show();
+    $("#short-or-long").hide();
+  });
+
+  $("#questionnaire-restart-button").click(function() {
+    window.location.href = "/questionnaire/restart";
+  });
+
+  $("#questionnaire-results-button").click(function() {
+    window.location.href = "/questionnaire-results";
+  });
+
+
 });
