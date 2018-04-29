@@ -34,6 +34,25 @@ def send_email(msg):
 
   return 'email successfully sent'
 
+def createConnectionsMessage(request):
+  subject = "[Connections Page Message]"
+  sender = 'jlee671@yahoo.com'
+  receiver = 'jared_lee@brown.edu'
+
+  name = request.form["first-name"] + " " + request.form["last-name"]
+  email = request.form["email"]
+  message = request.form["message"]
+
+  params = {'start'}
+  body =  ('Name: ' + name + '<br>' +
+          'Email: ' + email + '<br>' +
+          'Message: ' + message + '<br>' )
+  msg = MIMEText(body, 'html')
+  msg['Subject'] = subject
+  msg['From'] = sender
+  msg['To'] = receiver
+  return msg
+
 def createEventEmail(request):
   subject = "[Caregiver Event Suggestion]"
   sender = 'jlee671@yahoo.com'
