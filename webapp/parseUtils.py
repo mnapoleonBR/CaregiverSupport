@@ -46,7 +46,7 @@ def pingLinks(links):
 		if resp.status < 400:
 			workingLinks.append(link)
 		else:
-			notWorkingLinks = []
+			notWorkingLinks.append(link)
 	return workingLinks, notWorkingLinks
 
 def isLinkValid(link):
