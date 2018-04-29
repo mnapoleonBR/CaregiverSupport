@@ -15,7 +15,7 @@ import googleapiclient.discovery
 
 import webapp.emailUtils
 import webapp.oauthUtils
-import webapp.parseUtils
+# import webapp.parseUtils
 
 # This variable specifies the name of a file that contains the OAuth 2.0
 # information for this application, including its client_id and client_secret.
