@@ -2,6 +2,7 @@ import httplib2
 import os
 from bs4 import BeautifulSoup, SoupStrainer
 from os import listdir
+from collections import defaultdict
 
 http = httplib2.Http()
 status, response = http.request('http://baker-ripley.herokuapp.com/national-resources')
@@ -9,51 +10,81 @@ status, response = http.request('http://baker-ripley.herokuapp.com/national-reso
 templateDirectory = './webapp/templates'
 
 def getAllLinks():
-	allLinks = []
+	allLinks = defaultdict(list)
 	for template in listdir(templateDirectory):
-		print template
+		tempLinks = []
 		fullLink = os.getcwd() + '/webapp/templates/' + template
 		htmlfile = open(fullLink)
 		for link in BeautifulSoup(htmlfile, parseOnlyThese=SoupStrainer('a')):
 			if link.has_attr('href'):
-				allLinks.append(link['href'])
-
-	valid = getValidLinks(allLinks)
-	checkIfValid(valid)
+				allLinks[template].append(link['href'])
 	return allLinks
-	# for link in allLinks:
-	# 	if "http" not in link and "https" not in link:
-	# 		print link + ' is no'
-	# 	else:
-	# 		onlyLinks.append(link)
+
+def getValidLinksFromTemplate(template):
+	allLinks = []
+	fullLink = os.getcwd() + '/webapp/templates/' + template
+	htmlfile = open(fullLink)
+	for link in BeautifulSoup(htmlfile, parseOnlyThese=SoupStrainer('a')):
+		if link.has_attr('href'):
+			allLinks.append(link['href'])
+	return getValidLinks(allLinks)
 	
-	# print onlyLinks
-
-	# for link in BeautifulSoup(response, parseOnlyThese=SoupStrainer('a')):
-	# 	if link.has_attr('href'):
-	# 		print link['href']
-
 
 def getValidLinks(links):
-	print 'valid links only'
 	validLinks = []
 	for link in links:
 		if "http" in link or "https" in link: 
 			validLinks.append(link)
-			print link
 	return validLinks
 
-def checkIfValid(links):
-	invalid = []
+def pingLinks(links):
+	workingLinks = []
+	notWorkingLinks = []
 	h = httplib2.Http()
 	for link in links:
 		resp, content = h.request(link, 'HEAD')
-		print resp.status
 		if resp.status < 400:
+			workingLinks.append(link)
 			print link + ' is valid'
 		else:
-			print link + ' oh no not valid'
-			invalid.append(link)
+			notWorkingLinks = []
+			print link + ' IS NOT VALID'
+	return workingLinks, notWorkingLinks
+
+def isLinkValid(link):
+	h = httplib2.Http()
+	resp, content = h.request(link, 'HEAD')
+	if resp.status < 400:
+		return true
+	return false
+	
+	# print 'HERE'
+	# print 'HERE'
+	# print 'HERE'
+	# print 'HERE'
+	# for key in finalLinks:
+	# 	print key
+	# 	for link in finalLinks[key]:
+	# 		for k in link:
+	# 			print k
+	# 			print link[key]
+	# return finalLinks
+
+# /home: 
+# 	valid: "google.com"
+# 	invalid: "yahoo.com"
+# /calendar:
+# 	valid: 'helloworld.com'
+# 	invalid: 'bakerripley.org'
 
 def getLinksFromHtml():
-	print('hello')
+	templateToValid = {}
+	for template in listdir(templateDirectory):
+		tempDict = {}
+		linksToCheck = getValidLinksFromTemplate(template)
+		working, notWorking = pingLinks(linksToCheck)
+		tempDict['working'] = working
+		tempDict['notWorking'] = notWorking
+		templateToValid[template] = tempDict
+
+	return templateToValid
