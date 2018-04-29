@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley New To Caregiving Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "New To Caregiving" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Caregiving can be a daunting task and you may feel like you are in a whirlwind. You may be feeling worried, scared, guilty, anxious, etc.  This website has tools to equip you on your caregiving journey.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h2>Tools you can use</h2>
+    <p>
+        There are a variety of tools available to help you manage your caregiving responsibility. There are a variety of national websites with tools and information on caregiving. Click here to be connected. 
+        <a href="https://apps.hhs.texas.gov/ltcsearch/providersearch.cfm">AARP Prepare to Care Workbook</a> is another resource that can guide you through the beginning of your caregiving journey.  It includes a list of national resources, checklists, assessments that can be used to help to be better prepared and organized.It is also offered in a variety of languages 
+    </p>
+    <h2> Getting Help </h2> 
+    <p>It’s important to reach out for help while caregiving. Your friends and family can be your most important resource. Not only can they provide physical help, they can also support you emotionally. Visit our Self Care and Social Support Page for tips on how to identify who can help you. 
+
+    You can also reach out to professionals for support. Professionals are available to assist you in connecting to resources, decision-making, future planning, providing hands-on care, and emotional support. To get help from a professional, please contact our Caregiver Support Specialist
+    </p>
+    <p>
+        <h2> Understanding the Lingo </h2> 
+        Below is a brief overview of words and acronyms commonly used by caregivers and people working with them.
+        <ul> 
+            
+
+            <li> 
+                Activities of Daily Living (ADLs): <span style="font-weight:thin;">Basic daily tasks that include, but are not limited to dressing, bathing, eating and toileting.</span>
+            </li>
+            <li> 
+                Adult Day Center: Non-residential facility that includes a variety of social, health and support services for adults in a professionally staffed facility.
+            </li> 
+            <li> 
+                Aging and Disability Resource Center (ADRC): An agency designated by the state to provide older adults and individuals with disabilities information, resources and connection to community services. 
+            </li> 
+            <li> 
+                Case Management: Service designed meet an individual of families needs through assessment, planning, and care coordination.
+            </li> 
+            <li> 
+                Continuing Care Retirement Communities (CCRC): Residential facility that offers independent living, assisted living, memory care, and nursing care. Services are offered on one campus and are designed to meet one’s changing needs.
+            </li>
+            <li> 
+                Do Not Resuscitate (DNR): An order completed by a doctor that communicates an individual's desired wishes during a medical emergency.
+            </li> 
+            <li> 
+                Employee Assistance Program (EAP): Work based program designed to identify and assist employees in addressing personal problems that impact their job performance, health, and well-being. Program typically refers employees to resources and offers assistance with paying for services. 
+            </li>
+            <li> 
+                Family and Medical Leave Act (FMLA): A law requiring some employers to allow employees unpaid leave for qualified medical and family reasons.  
+            </li>
+            <li> 
+                Instrumental Activities of Daily Living (IADLs): Basic daily tasks such as managing money, shopping, housekeeping and preparing meals. 
+            </li>
+            <li> 
+                Health Insurance Portability Accountability Act (HIPAA): A law that provides data privacy and security provisions for safeguarding medical information. 
+            </li>
+            <li> 
+                Hospice Care:  Service designed to provide terminally ill people and their families with pain management, social services, and emotional and spiritual support. 
+            </li>
+            <li> 
+                Long Term Care Insurance: Insurance designed to pay for the cost of long-term care services such as in-home, assisted living or nursing home. 
+            </li>
+            <li> 
+                Medicare: A federal health insurance program for people age 65 and over, and for some younger individuals that qualify due to a disability.  
+            </li>
+            <li> 
+                Medicaid: A state managed program that provides eligible beneficiaries with health and long-term care benefits. 
+            </li>
+            <li> 
+                Palliative Care: Provides terminally ill people with services that support their physical, mental, and emotional needs. 
+            </li>
+            <li> 
+                Power of Attorney: Legal document that authorizes a person to act for another person in legal and financial matters. 
+            </li>
+            <li> 
+                Provider Services: Services designed to assist individuals with their personal care needs such as bathing, dressing, meal preparation and grocery shopping. 
+            </li>
+            <li> 
+                Respite: Provides family caregivers with a temporary break from their caregiving responsibilities. 
+            </li>
+            <li> 
+                Social Security Income (SSI): A federal program that provides a monthly benefit to people age 65 and over, disabled or blind, and have limited income. 
+            </li>
+
+
+
+
+
+
+
+        </ul> 
+    </p>
+    
+</div>
+
+
+{% endblock %}

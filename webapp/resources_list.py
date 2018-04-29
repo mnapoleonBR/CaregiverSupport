@@ -28,5 +28,30 @@ resourceInfoMap = {
         'keywords': ['VA', 'veteran services', 'VA benefits', 'aid and attendance', 'vet', 'veterans'],
         'longer_title': 'Veterans\' Resources',
         'description': 'Veterans are eligible for a variety of benefits and services that can assist you in caring for them. This page details resources that may help you access and use these benefits.'
+    },
+    'healthcare-benefits': {
+        'keywords': ['health care', 'healthcare', 'health, benefits', 'medicaid', 'medicare', 'benefit', 'payment', 'health coverage'],
+        'longer_title': 'Healthcare Benefits',
+        'description': 'Understanding who pays for what can be confusing when caring for an older adult. Below is an outline of some of the common benefits older adults receive and links to the local agencies that can help you understand them.'
+    },
+    'new-to-caregiving': {
+        'keywords': ['beginner', 'new', 'caregiving'], 
+        'longer_title': 'I Am New to Caregiving',
+        'description': 'Caregiving can be a daunting task and you may feel like you are in a whirlwind. You may be feeling worried, scared, guilty, anxious, etc.  This website has tools to equip you on your caregiving journey.'
+    },
+    'self-care': {
+        'keywords': ['respite', 'stress', 'burnout', 'classes', 'self-care', 'workshops', 'seminars', 'overwhelmed'],
+        'longer_title': 'Taking Care of Yourself',
+        'description': 'Self care is any activity done to take care of your own physical, emotional, and mental health. Self care is essential for caregivers and is not a luxury, it is a necessity; if you are unwell, you are unable to provide care for someone else. Remember, always put your oxygen mask on first.'
+    },
+    'caring-while-working': {
+        'keywords': ['working', 'part-time', 'overwhelmed', 'full-time'],
+        'longer_title': 'Caring While Working',
+        'description': 'Caregiving is a full-time job but many people are also working another full time job while caring for an older adult. There are a variety of tools out there to help you manage your current job while you are a caregiver.'
+    },
+    'managing-daily-care': {
+        'keywords': ['medication', 'doctor', 'pill card', 'pharmacist', 'appointment'],
+        'longer_title': 'Managing Daily Care',
+        'description': 'Much of the job of a caregiver is managing specific health related needs. This can include daily management of health care needs, such as medication management, to making health care decisions at the end of life.  Below are some key resources to guide you through these key issues'
     }
 }

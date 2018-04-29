@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley New To Caregiving Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Managing Daily Care" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Much of the job of a caregiver is managing specific health related needs. This can include daily management of health care needs, such as medication management, to making health care decisions at the end of life.  Below are some key resources to guide you through these key issues
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    <h2> Understanding the diagnosis </h2> 
+    <p>
+        One of the most challenges aspects of care can simply be understanding the diagnosis. There are a variety of sources to learn more about the conditions and diseases that may affect older adults. However, it is extremely important to identify accurate information and credible sources. The  National Institutes of Health developed <a href="https://ods.od.nih.gov/Health_Information/How_To_Evaluate_Health_Information_on_the_Internet_Questions_and_Answers.aspx"> How to Evaluate Health Information on the Internet: Questions and Answers</a> to help you determine if the information found online is credible. The National Institutes of Health’s <a href="https://www.nih.gov/institutes-nih/nih-office-director/office-communications-public-liaison/clear-communication/clear-health-nih"> Clear Health Resource List</a> is also a great place to start your search for more information. 
+    </p>
+
+    </h2>Talking with your doctor</h2> 
+    <p>
+        The <a href= "https://www.nia.nih.gov/health/doctor-patient-communication/talking-with-your-doctor"> National Institutes on Aging </a> provides a comprehensive list of resources for talking to your doctor including how to prepare for your doctor’s appointment, how to identify a doctor you can talk to and questions to ask your doctor. The website also provides several templates to assist you in managing your loved ones  health.
+    </p>
+
+    <h2> Managing Medication </h2>
+    <p>
+        The Family Caregiver Alliance’s <a href="https://www.caregiver.org/caregiver%CA%BCs-guide-medications-and-aging"> Caregiver’s Guide to Medication and Aging </a> provides an overview of medication and aging, a list of questions about medications to ask medical professionals, a list of things your pharmacist can help you with and a host of other topics.  
+
+        The Agency for Healthcare Research and Quality developed <a href ="https://www.ahrq.gov/patients-consumers/diagnosis-treatment/treatments/pillcard/index.html">How to Create a Pill Card </a> as a guide for keeping up with your loved ones medications. The downloadable template is easy to update and can be easily shared with medical professionals and family members. 
+    </p>
+    <h2> Having the tough conversations </h2> 
+    <p> 
+        The <a href= "https://theconversationproject.org/starter-kits/"> Conversation Starter Project</a> is a free resource that can be used to discuss health care wishes with your loved one and family. The kits are offered in a variety of languages. Additionally, you can visit the Legal Resources page for additional information about the types of healthcare decisions that may arise. 
+    </p> 
+</div>
+
+{% endblock %}

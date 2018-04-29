@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+BakerRipley New To Caregiving Resource
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel='stylesheet' href={{ url_for('static', filename='assets/css/general-resource.css') }} />
+{% endblock %}
+
+{% block content %}
+
+{% set title = "Caring While Working" %}
+{% include 'header.html' %}
+
+<div class="resource-intro-container">
+    <p class="resource-intro-text">
+        Caregiving is a full-time job but many people are also working another full time job while caring for an older adult. There are a variety of tools out there to help you manage your current job while you are a caregiver.
+    </p>
+</div>
+<div class="fake-media"></div>
+<div class="resource-content-container">
+    
+    <p>
+        AARP’s <a href="https://www.aarp.org/caregiving/life-balance/info-2017/work-benefits-rights.html "> Caregiving While Working</a> article reviews key tips and tools you can use for talking with human resources, talking to your manager, and understanding benefits available to you. 
+    </p>
+
+    <p>
+        Make sure to reach out to your employer to ask about any Employee Assistance Plans (EAPs) that may provide you with different resources, such as legal assistance or reduced cost care options. 
+    </p>
+
+    <p>
+        Additionally, your time away from work caring for an older adult may be covered by the Family Medical Leave Act. The Department of Labor’s <a href="https://www.dol.gov/whd/fmla/"> Family Medical Leave Act</a> page outlines the conditions that qualify for paid leave and provides additional guides on how to access this benefit.
+    </p>
+</div>
+
+{% endblock %}
