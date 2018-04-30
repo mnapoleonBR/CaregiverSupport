@@ -1,6 +1,7 @@
 import smtplib
 import flask
 import urllib
+from urlparse import urlparse
 from smtplib import SMTPException
 from email.mime.text import MIMEText
 
@@ -69,10 +70,10 @@ def createEventEmail(request):
 
 
   link = flask.url_for('createEvent', _external=True)
-  for i in range(0, 25):
-    print(link + '?' + urllib.parse.urlencode(request.form))
-
-  link = link + '?' + urllib.parse.urlencode(request.form)
+  
+  #Python 3 version of line 76
+  #link = link + '?' + urllib.parse.urlencode(request.form)
+  link = link + '?' + urllib.urlencode(request.form)
   params = {'start'}
   body =  ('Name: ' + name + '<br>' + 'Email: ' + email + '<br>' +
           'Event Name: ' + eventName + '<br>' +
