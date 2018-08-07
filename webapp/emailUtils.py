@@ -1,8 +1,7 @@
 import smtplib
 import flask
 import urllib
-#from urlparse import urlparse
-from urllib import urlparse
+from urlparse import urlparse
 from smtplib import SMTPException
 from email.mime.text import MIMEText
 
